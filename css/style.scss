@@ -190,6 +190,28 @@ body {
     font-size: 16px;
   }
 }
+/* 背景画像の見えている高さ */
+.parallax {
+  height: 488px;
+  @include mq(pc) {
+    height: 380px;
+  }
+}
+
+/* 背景画像 */
+.parallax::before {
+  background-image: url(/img/parallax.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  content: "";
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
 
 // 福利厚生
 .benefits{
