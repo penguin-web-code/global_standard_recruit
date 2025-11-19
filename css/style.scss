@@ -1,0 +1,22 @@
+// 色
+$text-main:#404559;
+$text-dark:#023E78;
+$text-sub:#fff;
+
+$bg-01:#F2F4F6;
+$bg-02:#E4EAF1;
+$bg-03:#023E78;
+$bg-04:#0291D9;
+
+// font
+$font-ja: "Zen Kaku Gothic New", sans-serif;
+$font-en:"Jost", sans-serif;
+
+// common
+.section__inner{
+  margin-left: 24px;
+  margin-right: 24px;
+}
+body{
+  color: $text-main;
+}
