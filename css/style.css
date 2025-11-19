@@ -191,6 +191,19 @@ body {
 
 .benefits {
   background-color: #f2f4f6;
+  position: relative;
+}
+
+.benefits__bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 56.4102564103vw;
+}
+@media screen and (min-width: 1025px) {
+  .benefits__bg {
+    width: 53.2638888889vw;
+  }
 }
 
 .benefits__inner {

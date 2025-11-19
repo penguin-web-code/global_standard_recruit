@@ -194,6 +194,17 @@ body {
 // 福利厚生
 .benefits{
   background-color: $bg-01;
+  position: relative;
+}
+.benefits__bg{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: calc(220 / 390 * 100vw);
+  @include mq(pc) {
+    width: calc(767 / 1440 * 100vw);
+  }
+
 }
 .benefits__inner{
   padding: 80px 0;
