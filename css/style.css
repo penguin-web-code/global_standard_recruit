@@ -280,6 +280,30 @@ body {
   left: 0;
   z-index: 0;
 }
+@media screen and (min-width: 1025px) {
+  .faq__bg {
+    width: 40.5555555556vw;
+  }
+}
+
+.faq__accent {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 46.9230769231vw;
+}
+@media screen and (min-width: 1025px) {
+  .faq__accent {
+    width: 22.0138888889vw;
+  }
+}
+
+.faq__accent__sub {
+  position: absolute;
+  width: 22.0138888889vw;
+  right: 3.6111111111vw;
+  bottom: 8.8888888889vw;
+}
 
 .faq__inner {
   padding-top: 100px;

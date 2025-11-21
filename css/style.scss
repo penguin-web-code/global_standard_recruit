@@ -267,7 +267,26 @@ body {
   bottom: 0;
   left: 0;
   z-index: 0;
+  @include mq(pc) {
+    width: calc(584 / 1440 * 100vw);
+  }
 
+}
+.faq__accent{
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: calc(183 / 390 * 100vw);
+  @include mq(pc) {
+    width: calc(317 / 1440 * 100vw);
+  }
+
+}
+.faq__accent__sub{
+  position: absolute;
+  width: calc(317 / 1440 * 100vw);
+  right: calc(52 / 1440 * 100vw);
+  bottom: calc(128 / 1440 * 100vw);
 }
 
 .faq__inner {
@@ -342,6 +361,7 @@ body {
     transform: rotate(180deg);
   }
 }
+
 
 // cta
 .cta {
