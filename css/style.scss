@@ -38,6 +38,8 @@ $width-inner: 1240px;
 }
 .section__title {
   margin-bottom: 40px;
+  position: relative;
+  z-index: 2;
   @include mq(pc) {
     margin-bottom: 64px;
   }
@@ -292,6 +294,12 @@ body {
 .faq__inner {
   padding-top: 100px;
   padding-bottom: 112px;
+  display: flex;
+  flex-direction: column;
+  @include mq(pc) {
+    flex-direction: row;
+    gap: calc(160 / 1440 * 100vw);
+  }
 }
 
 .faq__items {

@@ -12,6 +12,8 @@
 
 .section__title {
   margin-bottom: 40px;
+  position: relative;
+  z-index: 2;
 }
 @media screen and (min-width: 1025px) {
   .section__title {
@@ -308,6 +310,14 @@ body {
 .faq__inner {
   padding-top: 100px;
   padding-bottom: 112px;
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 1025px) {
+  .faq__inner {
+    flex-direction: row;
+    gap: 11.1111111111vw;
+  }
 }
 
 .faq__items {
