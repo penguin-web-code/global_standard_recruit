@@ -270,6 +270,15 @@ body {
 
 .faq {
   background-color: #e4eaf1;
+  position: relative;
+}
+
+.faq__bg {
+  position: absolute;
+  width: 70.7692307692vw;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
 }
 
 .faq__inner {
@@ -281,6 +290,8 @@ body {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  z-index: 1;
+  position: relative;
 }
 
 .faq__item {
@@ -343,8 +354,7 @@ body {
 }
 
 .cta {
-  padding-left: 12px;
-  padding-right: 12px;
+  padding: 12px;
   background-color: #e4eaf1;
 }
 @media screen and (min-width: 1025px) {
