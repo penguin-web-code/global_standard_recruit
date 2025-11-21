@@ -344,6 +344,146 @@ display: none;
 
 }
 
+// cta
+.cta{
+  padding-left: 12px;
+  padding-right: 12px;
+  background-color: #e4eaf1;
+  @include mq(pc) {
+     padding: 32px;
+  }
+}
+.cta__content {
+	width: 100%;
+  border-radius: 8px;
+  background: linear-gradient(270deg, #0291D9 0%, #023E78 100%);
+  padding: 56px 8px;
+  @include mq(pc) {
+    position: relative;
+    height: calc(636 / 1440 * 100vw);
+	perspective: 2000px;
+	perspective-origin: center;
+	transform-style: preserve-3d;
+	overflow: hidden;
+  border-radius: 8px;
+  }
+}
+
+.door-left,
+.door-right {
+	position: absolute;
+	top: 0;
+	width: 50%;
+	height: 100%;
+	overflow: hidden;
+	transition: transform 0.5s;
+	transition-timing-function: ease-out;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+    object-position: top;
+	}
+}
+
+.door-left {
+	left: 0;
+	transform-origin: left center;
+}
+
+.door-right {
+	right: 0;
+	transform-origin: right center;
+}
+.cta__message {
+  text-align: center;
+  @include mq(pc) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+}
+
+.cta__join {
+  color: $text-sub;
+  font-family: $font-en;
+  font-size: 32px;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.5; /* 48px */
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  @include mq(pc) {
+font-size: 56px;
+letter-spacing: 1.68px;
+text-transform: uppercase;
+margin-bottom: 36px;
+  }
+}
+
+.cta__lead {
+  color: $text-sub;
+font-size: 14px;
+font-style: normal;
+font-weight: 500;
+line-height: 1.7; /* 23.8px */
+margin-bottom: 40px;
+@include mq(pc) {
+font-size: 16px;
+
+}
+}
+
+.cta__btn {
+  color: $text-sub;
+  font-family: $font-en;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.5; /* 27px */
+  letter-spacing: 0.9px;
+  text-transform: uppercase;
+  padding: 16px 64px 16px;
+  border-radius: 44px;
+  border: 1px solid $text-sub;
+  position: relative;
+  @include mq(pc) {
+font-size: 24px;
+font-weight: 500;
+letter-spacing: 1.2px;
+  }
+  &::after{
+    position: absolute;
+    content: "";
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #FFF400;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 40px;
+  }
+
+}
+
+
+
+/* ホバー時のアニメーション */
+.cta__content:hover .door-left {
+	width: 35%;
+	transform: rotateY(24deg) scaleX(0.8);
+}
+
+.cta__content:hover .door-right {
+	width: 35%;
+	transform: rotateY(-24deg) scaleX(0.8);
+}
+
 
 
 

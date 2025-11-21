@@ -341,3 +341,151 @@ body {
 .faq__item dt.--open img {
   transform: rotate(180deg);
 }
+
+.cta {
+  padding-left: 12px;
+  padding-right: 12px;
+  background-color: #e4eaf1;
+}
+@media screen and (min-width: 1025px) {
+  .cta {
+    padding: 32px;
+  }
+}
+
+.cta__content {
+  width: 100%;
+  border-radius: 8px;
+  background: linear-gradient(270deg, #0291D9 0%, #023E78 100%);
+  padding: 56px 8px;
+}
+@media screen and (min-width: 1025px) {
+  .cta__content {
+    position: relative;
+    height: 44.1666666667vw;
+    perspective: 2000px;
+    perspective-origin: center;
+    transform-style: preserve-3d;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+}
+
+.door-left,
+.door-right {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  transition: transform 0.5s;
+  transition-timing-function: ease-out;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+.door-left img,
+.door-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  object-position: top;
+}
+
+.door-left {
+  left: 0;
+  transform-origin: left center;
+}
+
+.door-right {
+  right: 0;
+  transform-origin: right center;
+}
+
+.cta__message {
+  text-align: center;
+}
+@media screen and (min-width: 1025px) {
+  .cta__message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.cta__join {
+  color: #fff;
+  font-family: "Jost", sans-serif;
+  font-size: 32px;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.5; /* 48px */
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+@media screen and (min-width: 1025px) {
+  .cta__join {
+    font-size: 56px;
+    letter-spacing: 1.68px;
+    text-transform: uppercase;
+    margin-bottom: 36px;
+  }
+}
+
+.cta__lead {
+  color: #fff;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.7; /* 23.8px */
+  margin-bottom: 40px;
+}
+@media screen and (min-width: 1025px) {
+  .cta__lead {
+    font-size: 16px;
+  }
+}
+
+.cta__btn {
+  color: #fff;
+  font-family: "Jost", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.5; /* 27px */
+  letter-spacing: 0.9px;
+  text-transform: uppercase;
+  padding: 16px 64px 16px;
+  border-radius: 44px;
+  border: 1px solid #fff;
+  position: relative;
+}
+@media screen and (min-width: 1025px) {
+  .cta__btn {
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: 1.2px;
+  }
+}
+.cta__btn::after {
+  position: absolute;
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #FFF400;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 40px;
+}
+
+/* ホバー時のアニメーション */
+.cta__content:hover .door-left {
+  width: 35%;
+  transform: rotateY(24deg) scaleX(0.8);
+}
+
+.cta__content:hover .door-right {
+  width: 35%;
+  transform: rotateY(-24deg) scaleX(0.8);
+}
