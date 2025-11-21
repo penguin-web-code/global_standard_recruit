@@ -326,7 +326,7 @@ body {
   line-height: 1.6;
 }
 .faq__item dd {
-  border-top: 2px solid #C4CCD7;
+  border-top: 2px solid #c4ccd7;
   color: #023e78;
   font-size: 15px;
   font-style: normal;
@@ -356,7 +356,7 @@ body {
 .cta__content {
   width: 100%;
   border-radius: 8px;
-  background: linear-gradient(270deg, #0291D9 0%, #023E78 100%);
+  background: linear-gradient(270deg, #0291d9 0%, #023e78 100%);
   padding: 56px 8px;
 }
 @media screen and (min-width: 1025px) {
@@ -473,7 +473,7 @@ body {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: #FFF400;
+  background: #fff400;
   top: 50%;
   transform: translateY(-50%);
   right: 40px;
