@@ -181,6 +181,17 @@ body {
 }
 .member {
   background-color: $bg-02;
+  position: relative;
+}
+.member__bg{
+  position: absolute;
+  width: calc(305 / 390 * 100vw);
+  left: 0;
+  top: 0;
+  @include mq(pc) {
+    width: calc(940 / 1440 * 100vw);
+  }
+
 }
 
 .member__inner {

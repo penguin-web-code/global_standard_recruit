@@ -172,6 +172,19 @@ body {
 
 .member {
   background-color: #e4eaf1;
+  position: relative;
+}
+
+.member__bg {
+  position: absolute;
+  width: 78.2051282051vw;
+  left: 0;
+  top: 0;
+}
+@media screen and (min-width: 1025px) {
+  .member__bg {
+    width: 65.2777777778vw;
+  }
 }
 
 .member__inner {
