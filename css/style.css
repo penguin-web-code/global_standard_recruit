@@ -390,6 +390,8 @@ body {
 .cta {
   padding: 12px;
   background-color: #e4eaf1;
+  position: relative;
+  z-index: 1;
 }
 @media screen and (min-width: 1025px) {
   .cta {
@@ -532,4 +534,120 @@ body {
 .cta__content:hover .door-right {
   width: 35%;
   transform: rotateY(-24deg) scaleX(0.8);
+}
+
+.footer {
+  background-color: #e4eaf1;
+  position: relative;
+}
+
+.footer__bg {
+  position: absolute;
+  z-index: 0;
+  width: 64.1025641026vw;
+  bottom: 0;
+  right: 0;
+}
+@media screen and (min-width: 1025px) {
+  .footer__bg {
+    width: 58.6111111111vw;
+  }
+}
+
+.footer__inner {
+  z-index: 1;
+  padding-top: 40px;
+  padding-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: 32px;
+}
+@media screen and (min-width: 1025px) {
+  .footer__inner {
+    padding: 80px 0 32px;
+    gap: 0px;
+    flex-direction: row;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .footer__left {
+    margin-right: auto;
+  }
+}
+
+.footer__logo {
+  width: 280px;
+  margin-bottom: 32px;
+  display: inline-block;
+}
+@media screen and (min-width: 1025px) {
+  .footer__logo {
+    margin-bottom: 40px;
+  }
+}
+
+address {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.6; /* 25.6px */
+}
+@media screen and (min-width: 1025px) {
+  address {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+}
+
+.footer__menu {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+}
+@media screen and (min-width: 1025px) {
+  .footer__menu {
+    flex-direction: row;
+    gap: 20px;
+  }
+}
+
+.footer__menu__contents {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+@media screen and (min-width: 1025px) {
+  .footer__menu__contents {
+    gap: 0;
+    width: 250px;
+  }
+}
+
+.footer__menu__item {
+  padding: 8px 0;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.4; /* 25.2px */
+}
+
+.footer__sns {
+  display: flex;
+  gap: 36px;
+}
+
+.footer__sns__item {
+  width: 40px;
+}
+
+.copyright {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5; /* 18px */
 }
