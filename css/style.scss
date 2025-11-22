@@ -92,6 +92,201 @@ body {
   color: $text-main;
   font-family: $font-ja;
 }
+// member
+/* ================================
+   本題のCSS
+=============================== */
+.member__card__swiper-container,
+.member__card__swiper,
+.member__card__swiper-wrapper,
+.member__card__swiper-slide {
+  position: relative;
+}
+
+/* 位置のreset */
+.swiper-button-prev,
+.swiper-button-next,
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  top: unset;
+  bottom: unset;
+  left: unset;
+  right: unset;
+  margin: 0;
+  padding: 0;
+}
+
+/* =============================
+   ナビゲーションボタン
+============================= */
+/* デフォルトのボタンを初期化 */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  content: ""; /* デフォルトのものを初期化 */
+}
+
+/* 各ボタンのカスタマイズ */
+.swiper-button-prev,
+.swiper-button-next {
+  top: 50%;
+  translate: 0 -50%;
+  width: 40px;
+  height: 40px;
+  @include mq(pc) {
+    width: 80px;
+    height: 80px;
+  }
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.swiper-button-prev {
+  right: 100px;
+  @include mq(pc) {
+    right: 220px;
+  }
+}
+
+.swiper-button-next {
+  right: 20px;
+  @include mq(pc) {
+    right: 100px;
+  }
+}
+
+/* =============================
+   ページネーション (bullets)
+============================= */
+/* 位置の設定 (枠組み) */
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  top: calc(100% + 29px);
+}
+
+/* それぞれのページネーション */
+.swiper-pagination-bullets.swiper-pagination-horizontal .swiper-pagination-bullet {
+  opacity: 1;
+  width: 12px;
+  height: auto;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #d9d9d9;
+  margin-inline: calc(11px / 2);
+}
+
+/* activeな部分 */
+.swiper-pagination-bullets.swiper-pagination-horizontal .swiper-pagination-bullet-active {
+  background: #000;
+}
+.member {
+  background-color: $bg-02;
+}
+
+.member__inner {
+  padding: 80px 0 236px 20px;
+  @include mq(pc) {
+    padding: 120px 0 263px 100px;
+  }
+
+}
+
+.member__slide {
+
+}
+
+.member__card__inner {
+
+}
+
+.member__card__swiper-container {
+
+}
+
+.swiper {
+
+}
+
+.member__card__swiper {
+
+}
+
+.swiper-wrapper {
+
+}
+
+.member__card__swiper-wrapper {
+
+}
+
+.swiper-slide {
+
+}
+
+.member__card__swiper-slide {
+  position: relative;
+
+}
+.member__card__swiper-slide__number{
+  position: absolute;
+  width: 61px;
+  right: 8px;
+  top: -20px;
+  z-index: 3;
+
+
+}
+.swiper-horizontal>.swiper-pagination-progressbar, .swiper-pagination-progressbar.swiper-pagination-horizontal, .swiper-pagination-progressbar.swiper-pagination-vertical.swiper-pagination-progressbar-opposite, .swiper-vertical>.swiper-pagination-progressbar.swiper-pagination-progressbar-opposite{
+  top: auto !important;
+  bottom: -64px !important;
+  width: 95%;
+  @include mq(pc) {
+    width: calc(976 / 1440 * 100vw);
+    bottom: -103px !important;
+  }
+}
+.swiper-button-prev, .swiper-button-next{
+  top: auto !important;
+  bottom: -170px;
+}
+
+.member__card__swiper-slide__img {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+
+.member__card__swiper-slide__lead {
+  padding: 12px 16px;
+  height: calc(2em * 8);
+  background-color: $bg-03;
+  color: $text-sub;
+  color: var(--, #FFF);
+font-size: 15px;
+font-style: normal;
+font-weight: 500;
+line-height: 2; /* 30px */
+letter-spacing: 0.3px;
+@include mq(pc) {
+  height: calc(2em * 7);
+}
+
+}
+
+.swiper-pagination {
+
+}
+
+.swiper-button-prev {
+
+}
+
+.swiper-button-next {
+
+}
+
+
+
 // culture
 .culture {
   background-color: $bg-01;
