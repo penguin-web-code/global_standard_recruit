@@ -102,3 +102,18 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+// fv
+document.addEventListener("DOMContentLoaded", () => {
+	const imagesScroll = document.querySelector("#js-images-scroll"); // 無限アニメーション対象の要素を取得
+	const images = document.querySelector("#js-images"); // 無限アニメーションの1週分の要素を取得
+	const imagesWidth = images.scrollWidth; // 幅を取得
+	console.log('imagesWidth:', imagesWidth);
+
+	// itemsを複製
+	const imagesClone = images.cloneNode(true); // imagesを複製
+	imagesScroll.appendChild(imagesClone); // 複製した要素をimagesScrollに追加	
+	imagesClone.classList.add("is-clone"); // is-cloneクラスを追加
+
+	imagesScroll.style.setProperty('--images-width', `${imagesWidth}px`); // CSS変数にセット
+});
