@@ -110,9 +110,9 @@
     <div class="main__lead">
       <div class="main__lead__bg">
         <picture>
-            <source srcset="/img/lead-bg-sp.png" media="(max-width: 1024px)">
-            <img src="/img/lead-bg-pc.png">
-          </picture>
+          <source srcset="/img/lead-bg-sp.png" media="(max-width: 1024px)">
+          <img src="/img/lead-bg-pc.png">
+        </picture>
       </div>
       <div class="main__lead__inner">
         <div class="text-flow">
@@ -160,7 +160,7 @@
           <span>私たちの仕事</span>
         </h2>
         <ul class="business__category">
-          <li class="business__category__item">
+          <li class="business__category__item --active">
             <p class="business__category__item__en">Business Training Consultant</p>
             <div class="business__category__item__ja">
               <span>01</span>研修コンサルタント
@@ -185,115 +185,457 @@
             </div>
           </li>
         </ul>
-        <ul class="business__items">
-          <li class="business__item">
-            <p class="business__item__en">Business Training Consultant</p>
-            <p class="business__item__ja"><span>01</span>研修コンサルタント</p>
-            <div class="business__item__img"><img src="/img/business-01.png" alt=""></div>
-            <div class="business__item__contents">
-              <dl>
-                <dt>仕事内容</dt>
-                <dd>
-                  <ul>
-                    <li>
-                      法人向けビジネス英語研修や異文化コミュニケーション研修の企画・運営
+        <div class="business__card">
+          <div class="business__card__inner">
+            <div class="business__card__swiper-container">
+              <div class="swiper business__card__swiper">
+                <div class="swiper-wrapper business__card__swiper-wrapper">
+                  <div class="swiper-slide business__card__swiper-slide">
+                    <li class="business__item">
+                      <p class="business__item__en">Business Training Consultant</p>
+                      <p class="business__item__ja"><span>01</span>研修コンサルタント</p>
+                      <div class="business__item__img"><img src="/img/business-01.png" alt=""></div>
+                      <div class="business__item__contents">
+                        <dl>
+                          <dt>仕事内容</dt>
+                          <dd>
+                            <ul>
+                              <li>
+                                法人向けビジネス英語研修や異文化コミュニケーション研修の企画・運営
+                              </li>
+                              <li>クライアント企業へのヒアリングと課題分析</li>
+                              <li>研修プランの提案と改善</li>
+                            </ul>
+                          </dd>
+                        </dl>
+                        <dl>
+                          <dt>求める人物像</dt>
+                          <dd>
+                            <ul>
+                              <li>法人営業や人材育成に関わった経験を活かしたい方</li>
+                              <li>成果にこだわり、クライアントに価値を提供できる方</li>
+                            </ul>
+                          </dd>
+                        </dl>
+                      </div>
+                      <button class="modal__open-btn" data-dialog="modal1">募集要項を詳しく見る</button>
+                      <dialog id="modal1" aria-labelledby="modal-head1" aria-describedby="modal-text1"
+                        class="modal__content">
+                        <button class="modal__close-btn">
+                          <p>募集要項を閉じる</p>
+                          <img src="/img/close-icon.svg" alt="閉じる">
+                        </button>
+                        <div class="modal__inner">
+                          <div class="modal__body">
+                            <div id="modal-head1">
+                              <p class="modal__head__en">Business Training Consultant</p>
+                              <p class="modal__head__ja"><span>01</span>研修コンサルタントの募集要項</p>
+                            </div>
+                            <div id="modal__text1" class="modal__text">
+                              <dl>
+                                <dt>仕事内容</dt>
+                                <dd>
+                                  <ul>
+                                    <li>法人向けビジネス英語研修・異文化コミュニケーション研修の企画・運営</li>
+                                    <li>クライアント企業へのヒアリング、課題分析</li>
+                                    <li>研修プランの提案、改善案の策定</li>
+                                    <li>講師・研修運営スタッフとの連携</li>
+                                  </ul>
+                                </dd>
+                              </dl>
+                              <dl>
+                                <dt>応募資格</dt>
+                                <dd>
+                                  <ul>
+                                    <li>法人営業や人材育成に関わった経験をお持ちの方</li>
+                                    <li>コミュニケーション力を活かし、顧客課題に寄り添える方</li>
+                                  </ul>
+                                </dd>
+                              </dl>
+                              <dl>
+                                <dt>歓迎スキル・経験</dt>
+                                <dd>
+                                  <ul>
+                                    <li>英語を使った業務経験</li>
+                                    <li>教育・研修業界での実務経験</li>
+                                    <li>新しいプログラムを自ら企画した経験</li>
+                                  </ul>
+                                </dd>
+                              </dl>
+                              <dl>
+                                <dt>勤務地・勤務時間</dt>
+                                <dd>
+                                  <ul>
+                                    <li>大阪本社または東京支社（プロジェクトにより出張あり）</li>
+                                    <li>フレックスタイム制（コアタイム10:00〜15:00）</li>
+                                    <li>リモート勤務可（案件に応じて）</li>
+                                  </ul>
+                                </dd>
+                              </dl>
+                              <dl>
+                                <dt>給与・待遇</dt>
+                                <dd>
+                                  <ul>
+                                    <li>年収：450万〜800万円（経験・能力を考慮）</li>
+                                    <li>賞与年2回、インセンティブ制度あり</li>
+                                    <li>語学学習補助、資格取得支援制度</li>
+                                  </ul>
+                                </dd>
+                              </dl>
+                              <dl>
+                                <dt>休日・休暇</dt>
+                                <dd>
+                                  <ul>
+                                    <li>完全週休2日制（土日）・祝日
+                                    </li>
+                                    <li>年末年始・夏季休暇</li>
+                                    <li>有給休暇・特別休暇</li>
+                                  </ul>
+                                </dd>
+                              </dl>
+                            </div>
+                            <button class="modal__entry">エントリーする</button>
+                          </div>
+                        </div>
+                      </dialog>
                     </li>
-                    <li>クライアント企業へのヒアリングと課題分析</li>
-                    <li>研修プランの提案と改善</li>
-                  </ul>
-                </dd>
-              </dl>
-              <dl>
-                <dt>求める人物像</dt>
-                <dd>
-                  <ul>
-                    <li>法人営業や人材育成に関わった経験を活かしたい方</li>
-                    <li>成果にこだわり、クライアントに価値を提供できる方</li>
-                  </ul>
-                </dd>
-              </dl>
-            </div>
-            <button class="modal__open-btn" data-dialog="modal1">募集要項を詳しく見る</button>
-            <dialog id="modal1" aria-labelledby="modal-head1" aria-describedby="modal-text1" class="modal__content">
-              <button class="modal__close-btn">
-                <p>募集要項を閉じる</p>
-                <img src="/img/close-icon.svg" alt="閉じる">
-              </button>
-              <div class="modal__inner">
-                <div class="modal__body">
-                  <div id="modal-head1">
-                    <p class="modal__head__en">Business Training Consultant</p>
-                    <p class="modal__head__ja"><span>01</span>研修コンサルタントの募集要項</p>
                   </div>
-                  <div id="modal__text1" class="modal__text">
-                    <dl>
-                      <dt>仕事内容</dt>
-                      <dd>
-                        <ul>
-                          <li>法人向けビジネス英語研修・異文化コミュニケーション研修の企画・運営</li>
-                          <li>クライアント企業へのヒアリング、課題分析</li>
-                          <li>研修プランの提案、改善案の策定</li>
-                          <li>講師・研修運営スタッフとの連携</li>
-                        </ul>
-                      </dd>
-                    </dl>
-                    <dl>
-                      <dt>応募資格</dt>
-                      <dd>
-                        <ul>
-                          <li>法人営業や人材育成に関わった経験をお持ちの方</li>
-                          <li>コミュニケーション力を活かし、顧客課題に寄り添える方</li>
-                        </ul>
-                      </dd>
-                    </dl>
-                    <dl>
-                      <dt>歓迎スキル・経験</dt>
-                      <dd>
-                        <ul>
-                          <li>英語を使った業務経験</li>
-                          <li>教育・研修業界での実務経験</li>
-                          <li>新しいプログラムを自ら企画した経験</li>
-                        </ul>
-                      </dd>
-                    </dl>
-                    <dl>
-                      <dt>勤務地・勤務時間</dt>
-                      <dd>
-                        <ul>
-                          <li>大阪本社または東京支社（プロジェクトにより出張あり）</li>
-                          <li>フレックスタイム制（コアタイム10:00〜15:00）</li>
-                          <li>リモート勤務可（案件に応じて）</li>
-                        </ul>
-                      </dd>
-                    </dl>
-                    <dl>
-                      <dt>給与・待遇</dt>
-                      <dd>
-                        <ul>
-                          <li>年収：450万〜800万円（経験・能力を考慮）</li>
-                          <li>賞与年2回、インセンティブ制度あり</li>
-                          <li>語学学習補助、資格取得支援制度</li>
-                        </ul>
-                      </dd>
-                    </dl>
-                    <dl>
-                      <dt>休日・休暇</dt>
-                      <dd>
-                        <ul>
-                          <li>完全週休2日制（土日）・祝日
-                          </li>
-                          <li>年末年始・夏季休暇</li>
-                          <li>有給休暇・特別休暇</li>
-                        </ul>
-                      </dd>
-                    </dl>
+                  <div class="swiper-slide business__card__swiper-slide">
+                    <li class="business__item">
+                      <p class="business__item__en">Business Training Consultant</p>
+                      <p class="business__item__ja"><span>01</span>研修コンサルタント</p>
+                      <div class="business__item__img"><img src="/img/business-01.png" alt=""></div>
+                      <div class="business__item__contents">
+                        <dl>
+                          <dt>仕事内容</dt>
+                          <dd>
+                            <ul>
+                              <li>
+                                法人向けビジネス英語研修や異文化コミュニケーション研修の企画・運営
+                              </li>
+                              <li>クライアント企業へのヒアリングと課題分析</li>
+                              <li>研修プランの提案と改善</li>
+                            </ul>
+                          </dd>
+                        </dl>
+                        <dl>
+                          <dt>求める人物像</dt>
+                          <dd>
+                            <ul>
+                              <li>法人営業や人材育成に関わった経験を活かしたい方</li>
+                              <li>成果にこだわり、クライアントに価値を提供できる方</li>
+                            </ul>
+                          </dd>
+                        </dl>
+                      </div>
+                      <button class="modal__open-btn" data-dialog="modal1">募集要項を詳しく見る</button>
+                      <dialog id="modal1" aria-labelledby="modal-head1" aria-describedby="modal-text1"
+                        class="modal__content">
+                        <button class="modal__close-btn">
+                          <p>募集要項を閉じる</p>
+                          <img src="/img/close-icon.svg" alt="閉じる">
+                        </button>
+                        <div class="modal__inner">
+                          <div class="modal__body">
+                            <div id="modal-head1">
+                              <p class="modal__head__en">Business Training Consultant</p>
+                              <p class="modal__head__ja"><span>01</span>研修コンサルタントの募集要項</p>
+                            </div>
+                            <div id="modal__text1" class="modal__text">
+                              <dl>
+                                <dt>仕事内容</dt>
+                                <dd>
+                                  <ul>
+                                    <li>法人向けビジネス英語研修・異文化コミュニケーション研修の企画・運営</li>
+                                    <li>クライアント企業へのヒアリング、課題分析</li>
+                                    <li>研修プランの提案、改善案の策定</li>
+                                    <li>講師・研修運営スタッフとの連携</li>
+                                  </ul>
+                                </dd>
+                              </dl>
+                              <dl>
+                                <dt>応募資格</dt>
+                                <dd>
+                                  <ul>
+                                    <li>法人営業や人材育成に関わった経験をお持ちの方</li>
+                                    <li>コミュニケーション力を活かし、顧客課題に寄り添える方</li>
+                                  </ul>
+                                </dd>
+                              </dl>
+                              <dl>
+                                <dt>歓迎スキル・経験</dt>
+                                <dd>
+                                  <ul>
+                                    <li>英語を使った業務経験</li>
+                                    <li>教育・研修業界での実務経験</li>
+                                    <li>新しいプログラムを自ら企画した経験</li>
+                                  </ul>
+                                </dd>
+                              </dl>
+                              <dl>
+                                <dt>勤務地・勤務時間</dt>
+                                <dd>
+                                  <ul>
+                                    <li>大阪本社または東京支社（プロジェクトにより出張あり）</li>
+                                    <li>フレックスタイム制（コアタイム10:00〜15:00）</li>
+                                    <li>リモート勤務可（案件に応じて）</li>
+                                  </ul>
+                                </dd>
+                              </dl>
+                              <dl>
+                                <dt>給与・待遇</dt>
+                                <dd>
+                                  <ul>
+                                    <li>年収：450万〜800万円（経験・能力を考慮）</li>
+                                    <li>賞与年2回、インセンティブ制度あり</li>
+                                    <li>語学学習補助、資格取得支援制度</li>
+                                  </ul>
+                                </dd>
+                              </dl>
+                              <dl>
+                                <dt>休日・休暇</dt>
+                                <dd>
+                                  <ul>
+                                    <li>完全週休2日制（土日）・祝日
+                                    </li>
+                                    <li>年末年始・夏季休暇</li>
+                                    <li>有給休暇・特別休暇</li>
+                                  </ul>
+                                </dd>
+                              </dl>
+                            </div>
+                            <button class="modal__entry">エントリーする</button>
+                          </div>
+                        </div>
+                      </dialog>
+                    </li>
                   </div>
-                  <button class="modal__entry">エントリーする</button>
+                  <div class="swiper-slide business__card__swiper-slide">
+                    <li class="business__item">
+                      <p class="business__item__en">Business Training Consultant</p>
+                      <p class="business__item__ja"><span>01</span>研修コンサルタント</p>
+                      <div class="business__item__img"><img src="/img/business-01.png" alt=""></div>
+                      <div class="business__item__contents">
+                        <dl>
+                          <dt>仕事内容</dt>
+                          <dd>
+                            <ul>
+                              <li>
+                                法人向けビジネス英語研修や異文化コミュニケーション研修の企画・運営
+                              </li>
+                              <li>クライアント企業へのヒアリングと課題分析</li>
+                              <li>研修プランの提案と改善</li>
+                            </ul>
+                          </dd>
+                        </dl>
+                        <dl>
+                          <dt>求める人物像</dt>
+                          <dd>
+                            <ul>
+                              <li>法人営業や人材育成に関わった経験を活かしたい方</li>
+                              <li>成果にこだわり、クライアントに価値を提供できる方</li>
+                            </ul>
+                          </dd>
+                        </dl>
+                      </div>
+                      <button class="modal__open-btn" data-dialog="modal1">募集要項を詳しく見る</button>
+                      <dialog id="modal1" aria-labelledby="modal-head1" aria-describedby="modal-text1"
+                        class="modal__content">
+                        <button class="modal__close-btn">
+                          <p>募集要項を閉じる</p>
+                          <img src="/img/close-icon.svg" alt="閉じる">
+                        </button>
+                        <div class="modal__inner">
+                          <div class="modal__body">
+                            <div id="modal-head1">
+                              <p class="modal__head__en">Business Training Consultant</p>
+                              <p class="modal__head__ja"><span>01</span>研修コンサルタントの募集要項</p>
+                            </div>
+                            <div id="modal__text1" class="modal__text">
+                              <dl>
+                                <dt>仕事内容</dt>
+                                <dd>
+                                  <ul>
+                                    <li>法人向けビジネス英語研修・異文化コミュニケーション研修の企画・運営</li>
+                                    <li>クライアント企業へのヒアリング、課題分析</li>
+                                    <li>研修プランの提案、改善案の策定</li>
+                                    <li>講師・研修運営スタッフとの連携</li>
+                                  </ul>
+                                </dd>
+                              </dl>
+                              <dl>
+                                <dt>応募資格</dt>
+                                <dd>
+                                  <ul>
+                                    <li>法人営業や人材育成に関わった経験をお持ちの方</li>
+                                    <li>コミュニケーション力を活かし、顧客課題に寄り添える方</li>
+                                  </ul>
+                                </dd>
+                              </dl>
+                              <dl>
+                                <dt>歓迎スキル・経験</dt>
+                                <dd>
+                                  <ul>
+                                    <li>英語を使った業務経験</li>
+                                    <li>教育・研修業界での実務経験</li>
+                                    <li>新しいプログラムを自ら企画した経験</li>
+                                  </ul>
+                                </dd>
+                              </dl>
+                              <dl>
+                                <dt>勤務地・勤務時間</dt>
+                                <dd>
+                                  <ul>
+                                    <li>大阪本社または東京支社（プロジェクトにより出張あり）</li>
+                                    <li>フレックスタイム制（コアタイム10:00〜15:00）</li>
+                                    <li>リモート勤務可（案件に応じて）</li>
+                                  </ul>
+                                </dd>
+                              </dl>
+                              <dl>
+                                <dt>給与・待遇</dt>
+                                <dd>
+                                  <ul>
+                                    <li>年収：450万〜800万円（経験・能力を考慮）</li>
+                                    <li>賞与年2回、インセンティブ制度あり</li>
+                                    <li>語学学習補助、資格取得支援制度</li>
+                                  </ul>
+                                </dd>
+                              </dl>
+                              <dl>
+                                <dt>休日・休暇</dt>
+                                <dd>
+                                  <ul>
+                                    <li>完全週休2日制（土日）・祝日
+                                    </li>
+                                    <li>年末年始・夏季休暇</li>
+                                    <li>有給休暇・特別休暇</li>
+                                  </ul>
+                                </dd>
+                              </dl>
+                            </div>
+                            <button class="modal__entry">エントリーする</button>
+                          </div>
+                        </div>
+                      </dialog>
+                    </li>
+                  </div>
+                  <div class="swiper-slide business__card__swiper-slide">
+                    <li class="business__item">
+                      <p class="business__item__en">Business Training Consultant</p>
+                      <p class="business__item__ja"><span>01</span>研修コンサルタント</p>
+                      <div class="business__item__img"><img src="/img/business-01.png" alt=""></div>
+                      <div class="business__item__contents">
+                        <dl>
+                          <dt>仕事内容</dt>
+                          <dd>
+                            <ul>
+                              <li>
+                                法人向けビジネス英語研修や異文化コミュニケーション研修の企画・運営
+                              </li>
+                              <li>クライアント企業へのヒアリングと課題分析</li>
+                              <li>研修プランの提案と改善</li>
+                            </ul>
+                          </dd>
+                        </dl>
+                        <dl>
+                          <dt>求める人物像</dt>
+                          <dd>
+                            <ul>
+                              <li>法人営業や人材育成に関わった経験を活かしたい方</li>
+                              <li>成果にこだわり、クライアントに価値を提供できる方</li>
+                            </ul>
+                          </dd>
+                        </dl>
+                      </div>
+                      <button class="modal__open-btn" data-dialog="modal1">募集要項を詳しく見る</button>
+                      <dialog id="modal1" aria-labelledby="modal-head1" aria-describedby="modal-text1"
+                        class="modal__content">
+                        <button class="modal__close-btn">
+                          <p>募集要項を閉じる</p>
+                          <img src="/img/close-icon.svg" alt="閉じる">
+                        </button>
+                        <div class="modal__inner">
+                          <div class="modal__body">
+                            <div id="modal-head1">
+                              <p class="modal__head__en">Business Training Consultant</p>
+                              <p class="modal__head__ja"><span>01</span>研修コンサルタントの募集要項</p>
+                            </div>
+                            <div id="modal__text1" class="modal__text">
+                              <dl>
+                                <dt>仕事内容</dt>
+                                <dd>
+                                  <ul>
+                                    <li>法人向けビジネス英語研修・異文化コミュニケーション研修の企画・運営</li>
+                                    <li>クライアント企業へのヒアリング、課題分析</li>
+                                    <li>研修プランの提案、改善案の策定</li>
+                                    <li>講師・研修運営スタッフとの連携</li>
+                                  </ul>
+                                </dd>
+                              </dl>
+                              <dl>
+                                <dt>応募資格</dt>
+                                <dd>
+                                  <ul>
+                                    <li>法人営業や人材育成に関わった経験をお持ちの方</li>
+                                    <li>コミュニケーション力を活かし、顧客課題に寄り添える方</li>
+                                  </ul>
+                                </dd>
+                              </dl>
+                              <dl>
+                                <dt>歓迎スキル・経験</dt>
+                                <dd>
+                                  <ul>
+                                    <li>英語を使った業務経験</li>
+                                    <li>教育・研修業界での実務経験</li>
+                                    <li>新しいプログラムを自ら企画した経験</li>
+                                  </ul>
+                                </dd>
+                              </dl>
+                              <dl>
+                                <dt>勤務地・勤務時間</dt>
+                                <dd>
+                                  <ul>
+                                    <li>大阪本社または東京支社（プロジェクトにより出張あり）</li>
+                                    <li>フレックスタイム制（コアタイム10:00〜15:00）</li>
+                                    <li>リモート勤務可（案件に応じて）</li>
+                                  </ul>
+                                </dd>
+                              </dl>
+                              <dl>
+                                <dt>給与・待遇</dt>
+                                <dd>
+                                  <ul>
+                                    <li>年収：450万〜800万円（経験・能力を考慮）</li>
+                                    <li>賞与年2回、インセンティブ制度あり</li>
+                                    <li>語学学習補助、資格取得支援制度</li>
+                                  </ul>
+                                </dd>
+                              </dl>
+                              <dl>
+                                <dt>休日・休暇</dt>
+                                <dd>
+                                  <ul>
+                                    <li>完全週休2日制（土日）・祝日
+                                    </li>
+                                    <li>年末年始・夏季休暇</li>
+                                    <li>有給休暇・特別休暇</li>
+                                  </ul>
+                                </dd>
+                              </dl>
+                            </div>
+                            <button class="modal__entry">エントリーする</button>
+                          </div>
+                        </div>
+                      </dialog>
+                    </li>
+                  </div>
                 </div>
               </div>
-            </dialog>
-          </li>
-        </ul>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
     <!-- Your Challenge -->

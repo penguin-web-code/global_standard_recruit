@@ -204,3 +204,32 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+// business slider
+const businessCardSwiper = new Swiper('.business__card__swiper', { // swiperの名前
+  // 切り替えのモーション
+  speed: 1000, // 表示切り替えのスピード
+  effect: "slide", // 切り替えのmotion (※1)
+  allowTouchMove: true, // スワイプで表示の切り替えを有効に
+
+  // 最後→最初に戻るループ再生を有効に
+  loop: true,
+
+  // 自動スライドについて
+  // autoplay: { 
+  //   delay: 3000, // 何秒ごとにスライドを動かすか
+  // },
+
+  // 表示について
+  centeredSlides: false, // 中央寄せにしない
+  slidesPerView: "1.2",
+  spaceBetween: 16,
+  breakpoints: {
+    // 画面幅が1025px以上の場合
+    1025: {
+      slidesPerView:"2.2",
+      spaceBetween:24,
+    }
+  },
+});
+
