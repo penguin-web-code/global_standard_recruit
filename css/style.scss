@@ -95,7 +95,324 @@ body {
   color: $text-main;
   font-family: $font-ja;
 }
+// main lead
+.main__lead {
+  background: linear-gradient(270deg, #0291d9 0%, #023e78 100%);
+}
+.main__lead__inner {
+  padding: 176px 0 131px;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  @include mq(pc) {
+    padding: 293px 0 118px;
+    flex-direction: row;
+    gap: 140px;
+    margin-left: 100px;
+  }
+}
+
+.main__lead__img {
+  width: 85%;
+  margin-left: auto;
+  img {
+    border-radius: 4px 0 0 4px;
+  }
+  @include mq(pc) {
+    width: 44%;
+  }
+}
+
+.text-flow {
+  width: fit-content;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.text-flow__line {
+  position: relative;
+  display: inline-block;
+  text-shadow: 0 0 64px rgba(0, 0, 0, 0.25);
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 2.2; /* 33px */
+  @include mq(pc) {
+    font-size: 18px;
+  }
+}
+
+@keyframes text-flow {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.text-flow__cover {
+  --delay: 1s;
+
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  color: $text-sub;
+  animation: text-flow 2s cubic-bezier(0.19, 1, 0.22, 1) var(--delay) both;
+}
+
+.text-flow__base {
+  display: block;
+  position: relative;
+  color: $text-dark;
+}
+
 // business
+.business {
+  background: linear-gradient(270deg, #0291d9 0%, #023e78 100%);
+}
+
+.business__inner {
+  padding: 164px 0 120px 24px;
+}
+
+.business__category {
+  display: flex;
+  gap: 16px 8px;
+  margin-bottom: 40px;
+  margin-right: 24px;
+  flex-wrap: wrap;
+}
+
+.business__category__item {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #fff;
+  background: $bg-02;
+  color: $text-dark;
+  border: 2px solid #0961b6;
+  width: calc((100% - 8px) / 2);
+}
+
+.business__category__item__en {
+  font-family: $font-en;
+  font-size: 8px;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.6; /* 12.8px */
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.business__category__item__ja {
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.6; /* 20.8px */
+  span {
+    font-size: 14px;
+    font-family: $font-en;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+}
+
+.business__items {
+  display: flex;
+  gap: 16px;
+}
+
+.business__item {
+  padding: 12px;
+  border-radius: 4px;
+  background-color: $bg-02;
+}
+
+.business__item__en {
+  color: $text-dark;
+  font-family: $font-en;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.6; /* 19.2px */
+  letter-spacing: 0.36px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.business__item__ja {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: $text-dark;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.6; /* 28.8px */
+  span {
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 500;
+    letter-spacing: 0.6px;
+    font-family: $font-en;
+  }
+}
+
+.business__item__img {
+  margin-bottom: 12px;
+  img {
+    width: 100%;
+  }
+}
+
+.business__item__contents {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 24px;
+  dt {
+    color: $text-dark;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.6; /* 24px */
+    margin-bottom: 6px;
+  }
+  dd {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.7; /* 23.8px */
+    ul {
+      list-style-type: disc;
+      list-style-position: outside;
+      padding-left: 1.5em;
+    }
+  }
+}
+
+.modal__open-btn {
+  padding: 20px;
+  width: 100%;
+  text-align: left;
+  color: $text-sub;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.4; /* 22.4px */
+  position: relative;
+  background-color: $bg-03;
+  border-radius: 4px;
+  &::after {
+    position: absolute;
+    content: '';
+    width: 24px;
+    height: 24px;
+    background: transparent url(/img/modal-btn.svg) no-repeat center
+      center/contain;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.modal__content {
+  padding: 64px 16px 16px;
+}
+
+.modal__close-btn {
+}
+
+.modal__inner {
+}
+
+.modal__body {
+}
+
+.modal__head__en {
+  color: $text-dark;
+  font-family: $font-en;
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.7; /* 22.4px */
+}
+
+.modal__head__ja {
+  display: flex;
+  gap: 12px;
+  color: $text-dark;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.6; /* 32px */
+  span {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.6;
+    font-style: italic;
+    font-family: $font-en;
+  }
+}
+.modal__text {
+  display: flex;
+  flex-direction: column;
+  dl {
+    padding: 12px 0;
+    border-bottom: 1px solid #c4ccd7;
+  }
+  dt {
+    color: $text-dark;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.6; /* 24px */
+    margin-bottom: 10px;
+  }
+  dd {
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.7; /* 25.5px */
+    ul {
+      list-style-type: disc;
+      list-style-position: outside;
+      padding-left: 1.5em;
+    }
+  }
+}
+
+.modal__entry {
+  padding: 20px 40px;
+  width: 100%;
+  background-color: $text-dark;
+  border-radius: 4px;
+  color: $text-sub;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  position: relative;
+  &::after {
+    position: absolute;
+    content: '';
+    width: 10px;
+    height: 20px;
+    background: transparent url(/img/entry-arrow.svg) no-repeat center
+      center/contain;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 45px;
+  }
+}
+
 /* 初期設定 */
 button {
   background: none;
@@ -114,11 +431,6 @@ button {
 body:has(dialog[open]) {
   overflow: hidden;
 }
-//ボタンのスタイル ============
-.modal__open-btn {
-  padding: 4px 20px;
-  border: 1px solid #000;
-}
 /* モーダルのスタイル ============ */
 dialog {
   &::backdrop {
@@ -132,8 +444,12 @@ dialog {
     &::backdrop {
       opacity: 1;
       /* 背景画像 */
-      background: rgba(0, 0, 0, 0.7);
-      backdrop-filter: blur(6px);
+      background: linear-gradient(
+          0deg,
+          rgba(2, 62, 120, 0.5) 0%,
+          rgba(2, 62, 120, 0.5) 100%
+        ),
+        rgba(211, 211, 211, 0.5);
     }
   }
 }
@@ -144,8 +460,11 @@ dialog {
   transition: opacity 0.3s ease-in-out;
   /* モーダル枠組みのスタイル */
   width: min(600px, 95%);
-  max-height: 80vh;
   background: #fff;
+  margin-top: 15px;
+  border-radius: 12px;
+  border: 1px solid $text-main;
+  background: $text-sub;
 }
 
 .modal__inner {
@@ -169,9 +488,19 @@ dialog {
 .modal__close-btn {
   position: absolute;
   z-index: 2;
-  top: 20px;
-  right: 20px;
-  font-size: 30px;
+  top: 16px;
+  right: 125px;
+  width: 36px;
+  display: flex;
+  white-space: nowrap;
+  color: $text-dark;
+  gap: 12px;
+  p {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.7; /* 20.4px */
+  }
 }
 
 // challenge

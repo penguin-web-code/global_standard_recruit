@@ -19,6 +19,46 @@
 
 <body>
   <main>
+    <!-- lead -->
+    <div class="main__lead">
+      <div class="main__lead__inner">
+        <p class="text-flow">
+          <span class="text-flow__line">
+            <span class="text-flow__cover" style="--delay: 1s;">私たちは教育を通じて、<br>
+              日本から世界へ羽ばたくビジネスパーソンを数多く育ててきました。<br>
+              そしてこれからは、<br>
+              アジアをはじめとする海外拠点にも活動の場を広げ、世界規模で人と人を結びつける存在を目指します。</span>
+            <span class="text-flow__base" aria-hidden="true">私たちは教育を通じて、<br>
+              日本から世界へ羽ばたくビジネスパーソンを数多く育ててきました。<br>
+              そしてこれからは、<br>
+              アジアをはじめとする海外拠点にも活動の場を広げ、世界規模で人と人を結びつける存在を目指します。</span>
+          </span><br>
+          <span class="text-flow__line">
+            <span class="text-flow__cover" style="--delay: 2.6s;">あなたが持つ可能性は、まだ形になっていないかもしれません。<br>
+              しかし、挑戦する意思さえあれば、<br>
+              その力は必ず世界を変える原動力になります。</span>
+            <span class="text-flow__base" aria-hidden="true">あなたが持つ可能性は、まだ形になっていないかもしれません。<br>
+              しかし、挑戦する意思さえあれば、<br>
+              その力は必ず世界を変える原動力になります。</span>
+          </span><br>
+          <span class="text-flow__line">
+            <span class="text-flow__cover" style="--delay: 3.2s;">私たちは、挑戦する人を歓迎します。<br>
+              あなたの挑戦が、やがて世界の新しい価値をつくる。<br>
+              その未来を、私たちと共に描いていきませんか。</span>
+            <span class="text-flow__base" aria-hidden="true">私たちは、挑戦する人を歓迎します。<br>
+              あなたの挑戦が、やがて世界の新しい価値をつくる。<br>
+              その未来を、私たちと共に描いていきませんか。</span>
+          </span><br>
+        </p>
+
+        <div class="main__lead__img">
+          <picture>
+            <source srcset="/img/main-lead-sp.jpg" media="(max-width: 1024px)">
+            <img src="/img/main-lead-pc.jpg">
+          </picture>
+        </div>
+      </div>
+    </div>
     <!-- Our Business -->
     <section class="business">
       <div class="business__inner">
@@ -56,7 +96,7 @@
           <li class="business__item">
             <p class="business__item__en">Business Training Consultant</p>
             <p class="business__item__ja"><span>01</span>研修コンサルタント</p>
-            <div class="business__item__img"><img src="" alt=""></div>
+            <div class="business__item__img"><img src="/img/business-01.png" alt=""></div>
             <div class="business__item__contents">
               <dl>
                 <dt>仕事内容</dt>
@@ -82,14 +122,17 @@
             </div>
             <button class="modal__open-btn" data-dialog="modal1">募集要項を詳しく見る</button>
             <dialog id="modal1" aria-labelledby="modal-head1" aria-describedby="modal-text1" class="modal__content">
-              <button class="modal__close-btn">&times;</button>
+              <button class="modal__close-btn">
+                <p>募集要項を閉じる</p>
+                <img src="/img/close-icon.svg" alt="閉じる">
+              </button>
               <div class="modal__inner">
                 <div class="modal__body">
                   <div id="modal-head1">
-                    <p class="modal__head__en"></p>
-                    <p class="modal__head__ja"><span></span></p>
+                    <p class="modal__head__en">Business Training Consultant</p>
+                    <p class="modal__head__ja"><span>01</span>研修コンサルタントの募集要項</p>
                   </div>
-                  <div id="modal__text1">
+                  <div id="modal__text1" class="modal__text">
                     <dl>
                       <dt>仕事内容</dt>
                       <dd>
