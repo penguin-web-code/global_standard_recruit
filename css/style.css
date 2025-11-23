@@ -1071,7 +1071,7 @@ dialog.js-show::backdrop {
 }
 @media screen and (min-width: 1025px) {
   .swiper-button-prev {
-    right: 220px;
+    right: 15.2777777778vw;
   }
 }
 
@@ -1080,7 +1080,7 @@ dialog.js-show::backdrop {
 }
 @media screen and (min-width: 1025px) {
   .swiper-button-next {
-    right: 100px;
+    right: 6.9444444444vw;
   }
 }
 
@@ -1144,6 +1144,14 @@ dialog.js-show::backdrop {
   right: 8px;
   top: -20px;
   z-index: 3;
+}
+
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+  background: #023e78 !important;
+}
+
+.swiper-pagination-progressbar {
+  background: #C4CCD7 !important;
 }
 
 .swiper-horizontal > .swiper-pagination-progressbar,

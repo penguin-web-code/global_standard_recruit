@@ -21,7 +21,7 @@ const cardSwiper = new Swiper('.member__card__swiper', { // swiperの名前
 
   // 表示について
   centeredSlides: false, // 中央寄せにしない
-  slidesPerView: "1.1",
+  slidesPerView: "1.2",
   spaceBetween: 20,
 
   // ページネーション
@@ -39,7 +39,7 @@ const cardSwiper = new Swiper('.member__card__swiper', { // swiperの名前
   breakpoints: {
     // 画面幅が1025px以上の場合
     1025: {
-      slidesPerView:"3.1",
+      slidesPerView:"3.2",
       spaceBetween:40,
     }
   },

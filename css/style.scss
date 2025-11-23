@@ -1054,14 +1054,14 @@ dialog {
 .swiper-button-prev {
   right: 100px;
   @include mq(pc) {
-    right: 220px;
+    right: calc(220 / 1440 * 100vw);
   }
 }
 
 .swiper-button-next {
   right: 20px;
   @include mq(pc) {
-    right: 100px;
+    right: calc(100 / 1440 * 100vw);
   }
 }
 
@@ -1144,6 +1144,14 @@ dialog {
   right: 8px;
   top: -20px;
   z-index: 3;
+}
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill{
+  background: $text-dark !important;
+
+}
+.swiper-pagination-progressbar{
+  background: #C4CCD7 !important;
+
 }
 .swiper-horizontal > .swiper-pagination-progressbar,
 .swiper-pagination-progressbar.swiper-pagination-horizontal,
