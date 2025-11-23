@@ -53,6 +53,9 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.section__title.--white {
+  color: #fff;
+}
 
 @media screen and (min-width: 1025px) {
   .is-sp {
@@ -74,6 +77,148 @@
 body {
   color: #404559;
   font-family: "Zen Kaku Gothic New", sans-serif;
+}
+
+.challenge {
+  background: linear-gradient(270deg, #0291d9 0%, #023e78 100%);
+}
+
+.challenge__inner {
+  padding-top: 120px;
+  padding-bottom: 80px;
+}
+@media screen and (min-width: 1025px) {
+  .challenge__inner {
+    padding-top: 222px;
+    padding-bottom: 133px;
+  }
+}
+
+.challenge__items {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+@media screen and (min-width: 1025px) {
+  .challenge__items {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    row-gap: 96px;
+  }
+  .challenge__items > *:first-child {
+    /* ここに左カラム専用のスタイルを書く */
+    margin-top: 64px;
+  }
+  .challenge__items > *:nth-child(4) {
+    /* 4つ目だけに当てるスタイル */
+    margin-top: -64px;
+  }
+}
+
+.challenge__item {
+  border-radius: 4px;
+  background: rgba(244, 251, 255, 0.7);
+}
+.challenge__item.--01 {
+  border-bottom: 12px solid #37a4db;
+}
+.challenge__item.--02 {
+  border-bottom: 12px solid #2766ae;
+}
+.challenge__item.--03 {
+  border-bottom: 12px solid #025178;
+}
+.challenge__item.--04 {
+  border-bottom: 12px solid #023e78;
+}
+@media screen and (min-width: 1025px) {
+  .challenge__item {
+    width: 40.4166666667vw;
+  }
+}
+
+.challenge__item__stage {
+  padding: 12px 28px;
+  color: #fff;
+  width: fit-content;
+  border-radius: 0 0 4px 0;
+}
+.challenge__item__stage.--01 {
+  background-color: #37a4db;
+}
+.challenge__item__stage.--02 {
+  background-color: #2766ae;
+}
+.challenge__item__stage.--03 {
+  background-color: #025178;
+}
+.challenge__item__stage.--04 {
+  background-color: #023e78;
+}
+.challenge__item__stage span {
+  font-family: "Jost", sans-serif;
+  font-size: 15px;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1; /* 15px */
+  letter-spacing: 0.45px;
+  display: flex;
+  align-items: center;
+}
+@media screen and (min-width: 1025px) {
+  .challenge__item__stage span {
+    font-size: 18px;
+    letter-spacing: 0.54px;
+  }
+}
+.challenge__item__stage strong {
+  margin-left: 8px;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1; /* 20px */
+  letter-spacing: 0.6px;
+}
+@media screen and (min-width: 1025px) {
+  .challenge__item__stage strong {
+    font-size: 24px;
+    letter-spacing: 0.72px;
+  }
+}
+.challenge__item__stage p {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.6; /* 28.8px */
+  margin-top: 4px;
+}
+@media screen and (min-width: 1025px) {
+  .challenge__item__stage p {
+    font-size: 24px;
+  }
+}
+
+.challenge__item__text {
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.7; /* 25.5px */
+  margin-bottom: 28px;
+  padding: 28px 24px 0;
+}
+@media screen and (min-width: 1025px) {
+  .challenge__item__text {
+    font-size: 16px;
+    margin-bottom: 41px;
+  }
+}
+
+.challenge__item__img {
+  padding: 0 24px 16px;
+}
+.challenge__item__img img {
+  width: 100%;
+  border-radius: 4px;
 }
 
 /* ================================
@@ -208,19 +353,26 @@ body {
   z-index: 3;
 }
 
-.swiper-horizontal > .swiper-pagination-progressbar, .swiper-pagination-progressbar.swiper-pagination-horizontal, .swiper-pagination-progressbar.swiper-pagination-vertical.swiper-pagination-progressbar-opposite, .swiper-vertical > .swiper-pagination-progressbar.swiper-pagination-progressbar-opposite {
+.swiper-horizontal > .swiper-pagination-progressbar,
+.swiper-pagination-progressbar.swiper-pagination-horizontal,
+.swiper-pagination-progressbar.swiper-pagination-vertical.swiper-pagination-progressbar-opposite,
+.swiper-vertical > .swiper-pagination-progressbar.swiper-pagination-progressbar-opposite {
   top: auto !important;
   bottom: -64px !important;
   width: 95%;
 }
 @media screen and (min-width: 1025px) {
-  .swiper-horizontal > .swiper-pagination-progressbar, .swiper-pagination-progressbar.swiper-pagination-horizontal, .swiper-pagination-progressbar.swiper-pagination-vertical.swiper-pagination-progressbar-opposite, .swiper-vertical > .swiper-pagination-progressbar.swiper-pagination-progressbar-opposite {
+  .swiper-horizontal > .swiper-pagination-progressbar,
+  .swiper-pagination-progressbar.swiper-pagination-horizontal,
+  .swiper-pagination-progressbar.swiper-pagination-vertical.swiper-pagination-progressbar-opposite,
+  .swiper-vertical > .swiper-pagination-progressbar.swiper-pagination-progressbar-opposite {
     width: 67.7777777778vw;
     bottom: -103px !important;
   }
 }
 
-.swiper-button-prev, .swiper-button-next {
+.swiper-button-prev,
+.swiper-button-next {
   top: auto !important;
   bottom: -170px;
 }
@@ -235,7 +387,7 @@ body {
   height: 16em;
   background-color: #023e78;
   color: #fff;
-  color: var(--, #FFF);
+  color: var(--, #fff);
   font-size: 15px;
   font-style: normal;
   font-weight: 500;

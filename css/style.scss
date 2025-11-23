@@ -74,6 +74,9 @@ $width-inner: 1240px;
       -webkit-text-fill-color: transparent;
     }
   }
+  &.--white {
+    color: $text-sub;
+  }
 }
 .is-sp {
   @include mq(pc) {
@@ -92,6 +95,138 @@ body {
   color: $text-main;
   font-family: $font-ja;
 }
+// challenge
+.challenge {
+  background: linear-gradient(270deg, #0291d9 0%, #023e78 100%);
+}
+
+.challenge__inner {
+  padding-top: 120px;
+  padding-bottom: 80px;
+  @include mq(pc) {
+    padding-top: 222px;
+    padding-bottom: 133px;
+  }
+}
+
+.challenge__items {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  @include mq(pc) {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    row-gap: 96px;
+    > *:first-child {
+      /* ここに左カラム専用のスタイルを書く */
+      margin-top: 64px;
+    }
+    > *:nth-child(4) {
+      /* 4つ目だけに当てるスタイル */
+      margin-top: -64px;
+    }
+  }
+}
+
+.challenge__item {
+  border-radius: 4px;
+  background: rgba(244, 251, 255, 0.7);
+  &.--01 {
+    border-bottom: 12px solid #37a4db;
+  }
+  &.--02 {
+    border-bottom: 12px solid #2766ae;
+  }
+  &.--03 {
+    border-bottom: 12px solid #025178;
+  }
+  &.--04 {
+    border-bottom: 12px solid #023e78;
+  }
+  @include mq(pc) {
+    width: calc(582 / 1440 * 100vw);
+  }
+}
+
+.challenge__item__inner {
+}
+
+.challenge__item__stage {
+  padding: 12px 28px;
+  color: $text-sub;
+  width: fit-content;
+  border-radius: 0 0 4px 0;
+  &.--01 {
+    background-color: #37a4db;
+  }
+  &.--02 {
+    background-color: #2766ae;
+  }
+  &.--03 {
+    background-color: #025178;
+  }
+  &.--04 {
+    background-color: #023e78;
+  }
+  span {
+    font-family: $font-en;
+    font-size: 15px;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 1; /* 15px */
+    letter-spacing: 0.45px;
+    display: flex;
+    align-items: center;
+    @include mq(pc) {
+      font-size: 18px;
+      letter-spacing: 0.54px;
+    }
+  }
+  strong {
+    margin-left: 8px;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 1; /* 20px */
+    letter-spacing: 0.6px;
+    @include mq(pc) {
+      font-size: 24px;
+      letter-spacing: 0.72px;
+    }
+  }
+  p {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.6; /* 28.8px */
+    margin-top: 4px;
+    @include mq(pc) {
+      font-size: 24px;
+    }
+  }
+}
+
+.challenge__item__text {
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.7; /* 25.5px */
+  margin-bottom: 28px;
+  padding: 28px 24px 0;
+  @include mq(pc) {
+    font-size: 16px;
+    margin-bottom: 41px;
+  }
+}
+
+.challenge__item__img {
+  padding: 0 24px 16px;
+  img {
+    width: 100%;
+    border-radius: 4px;
+  }
+}
+
 // member
 /* ================================
    本題のCSS
@@ -121,7 +256,7 @@ body {
 /* デフォルトのボタンを初期化 */
 .swiper-button-prev::after,
 .swiper-button-next::after {
-  content: ""; /* デフォルトのものを初期化 */
+  content: ''; /* デフォルトのものを初期化 */
 }
 
 /* 各ボタンのカスタマイズ */
@@ -165,7 +300,8 @@ body {
 }
 
 /* それぞれのページネーション */
-.swiper-pagination-bullets.swiper-pagination-horizontal .swiper-pagination-bullet {
+.swiper-pagination-bullets.swiper-pagination-horizontal
+  .swiper-pagination-bullet {
   opacity: 1;
   width: 12px;
   height: auto;
@@ -176,14 +312,15 @@ body {
 }
 
 /* activeな部分 */
-.swiper-pagination-bullets.swiper-pagination-horizontal .swiper-pagination-bullet-active {
+.swiper-pagination-bullets.swiper-pagination-horizontal
+  .swiper-pagination-bullet-active {
   background: #000;
 }
 .member {
   background-color: $bg-02;
   position: relative;
 }
-.member__bg{
+.member__bg {
   position: absolute;
   width: calc(305 / 390 * 100vw);
   left: 0;
@@ -191,7 +328,6 @@ body {
   @include mq(pc) {
     width: calc(940 / 1440 * 100vw);
   }
-
 }
 
 .member__inner {
@@ -199,55 +335,47 @@ body {
   @include mq(pc) {
     padding: 120px 0 263px 100px;
   }
-
 }
 
 .member__slide {
-
 }
 
 .member__card__inner {
-
 }
 
 .member__card__swiper-container {
-
 }
 
 .swiper {
-
 }
 
 .member__card__swiper {
-
 }
 
 .swiper-wrapper {
-
 }
 
 .member__card__swiper-wrapper {
-
 }
 
 .swiper-slide {
-
 }
 
 .member__card__swiper-slide {
   position: relative;
-
 }
-.member__card__swiper-slide__number{
+.member__card__swiper-slide__number {
   position: absolute;
   width: 61px;
   right: 8px;
   top: -20px;
   z-index: 3;
-
-
 }
-.swiper-horizontal>.swiper-pagination-progressbar, .swiper-pagination-progressbar.swiper-pagination-horizontal, .swiper-pagination-progressbar.swiper-pagination-vertical.swiper-pagination-progressbar-opposite, .swiper-vertical>.swiper-pagination-progressbar.swiper-pagination-progressbar-opposite{
+.swiper-horizontal > .swiper-pagination-progressbar,
+.swiper-pagination-progressbar.swiper-pagination-horizontal,
+.swiper-pagination-progressbar.swiper-pagination-vertical.swiper-pagination-progressbar-opposite,
+.swiper-vertical
+  > .swiper-pagination-progressbar.swiper-pagination-progressbar-opposite {
   top: auto !important;
   bottom: -64px !important;
   width: 95%;
@@ -256,7 +384,8 @@ body {
     bottom: -103px !important;
   }
 }
-.swiper-button-prev, .swiper-button-next{
+.swiper-button-prev,
+.swiper-button-next {
   top: auto !important;
   bottom: -170px;
 }
@@ -266,37 +395,30 @@ body {
   width: 100%;
 }
 
-
 .member__card__swiper-slide__lead {
   padding: 12px 16px;
   height: calc(2em * 8);
   background-color: $bg-03;
   color: $text-sub;
-  color: var(--, #FFF);
-font-size: 15px;
-font-style: normal;
-font-weight: 500;
-line-height: 2; /* 30px */
-letter-spacing: 0.3px;
-@include mq(pc) {
-  height: calc(2em * 7);
-}
-
+  color: var(--, #fff);
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 2; /* 30px */
+  letter-spacing: 0.3px;
+  @include mq(pc) {
+    height: calc(2em * 7);
+  }
 }
 
 .swiper-pagination {
-
 }
 
 .swiper-button-prev {
-
 }
 
 .swiper-button-next {
-
 }
-
-
 
 // culture
 .culture {
@@ -469,7 +591,7 @@ letter-spacing: 0.3px;
   background-color: $bg-02;
   position: relative;
 }
-.faq__bg{
+.faq__bg {
   position: absolute;
   width: calc(276 / 390 * 100vw);
   bottom: 0;
@@ -478,9 +600,8 @@ letter-spacing: 0.3px;
   @include mq(pc) {
     width: calc(584 / 1440 * 100vw);
   }
-
 }
-.faq__accent{
+.faq__accent {
   position: absolute;
   right: 0;
   top: 0;
@@ -488,9 +609,8 @@ letter-spacing: 0.3px;
   @include mq(pc) {
     width: calc(317 / 1440 * 100vw);
   }
-
 }
-.faq__accent__sub{
+.faq__accent__sub {
   position: absolute;
   width: calc(317 / 1440 * 100vw);
   right: calc(52 / 1440 * 100vw);
@@ -575,7 +695,6 @@ letter-spacing: 0.3px;
     transform: rotate(180deg);
   }
 }
-
 
 // cta
 .cta {
@@ -715,11 +834,10 @@ letter-spacing: 0.3px;
 
 // footer
 .footer {
-   background-color: #e4eaf1;
-   position: relative;
-
+  background-color: #e4eaf1;
+  position: relative;
 }
-.footer__bg{
+.footer__bg {
   position: absolute;
   z-index: 0;
   width: calc(250 / 390 * 100vw);
@@ -728,7 +846,6 @@ letter-spacing: 0.3px;
   @include mq(pc) {
     width: calc(844 / 1440 * 100vw);
   }
-
 }
 
 .footer__inner {
@@ -741,17 +858,15 @@ letter-spacing: 0.3px;
   gap: 32px;
   @include mq(pc) {
     padding: 80px 0 32px;
-    gap:0px;
+    gap: 0px;
     flex-direction: row;
   }
-
 }
 
 .footer__left {
   @include mq(pc) {
     margin-right: auto;
   }
-
 }
 
 .footer__logo {
@@ -761,21 +876,19 @@ letter-spacing: 0.3px;
   @include mq(pc) {
     margin-bottom: 40px;
   }
-
 }
-address{
-font-size: 16px;
-font-style: normal;
-font-weight: 500;
-line-height: 1.6; /* 25.6px */
-@include mq(pc) {
+address {
   font-size: 16px;
-  line-height: 1.7;
-}
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.6; /* 25.6px */
+  @include mq(pc) {
+    font-size: 16px;
+    line-height: 1.7;
+  }
 }
 
 .footer__right {
-
 }
 
 .footer__menu {
@@ -786,45 +899,39 @@ line-height: 1.6; /* 25.6px */
     flex-direction: row;
     gap: 20px;
   }
-
 }
-.footer__menu__contents{
+.footer__menu__contents {
   display: flex;
   flex-direction: column;
   gap: 10px;
   @include mq(pc) {
-    gap:0;
+    gap: 0;
     width: 250px;
   }
 }
 
 .footer__menu__item {
   padding: 8px 0;
-font-size: 18px;
-font-style: normal;
-font-weight: 700;
-line-height: 1.4; /* 25.2px */
-
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.4; /* 25.2px */
 }
 
 .footer__sns {
   display: flex;
   gap: 36px;
-
 }
 
 .footer__sns__item {
   width: 40px;
-
 }
-.copyright{
+.copyright {
   position: absolute;
   left: 0;
   bottom: 0;
-font-size: 12px;
-font-style: normal;
-font-weight: 500;
-line-height: 1.5; /* 18px */
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5; /* 18px */
 }
-
-
