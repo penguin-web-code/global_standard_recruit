@@ -407,6 +407,16 @@ body {
 // main lead
 .main__lead {
   background: linear-gradient(270deg, #0291d9 0%, #023e78 100%);
+  position: relative;
+}
+.main__lead__bg{
+  position: absolute;
+  width: calc(287 /390 * 100vw);
+  bottom: 0;
+  left: 0;
+  @include mq(pc) {
+    width: 100%;
+  }
 }
 .main__lead__inner {
   padding: 176px 0 131px;
@@ -437,6 +447,10 @@ body {
   padding: 0 24px;
   display: flex;
   flex-direction: column;
+  gap: 48px;
+  @include mq(pc) {
+    gap: 80px;
+  }
 }
 
 .text-flow__line {
@@ -486,7 +500,10 @@ body {
 }
 
 .business__inner {
-  padding: 164px 0 120px 24px;
+  padding: 33px 0 51px 20px;
+  @include mq(pc) {
+     padding: 0 0 0 100px;
+  }
 }
 
 .business__category {

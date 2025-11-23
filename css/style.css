@@ -402,6 +402,19 @@ body {
 
 .main__lead {
   background: linear-gradient(270deg, #0291d9 0%, #023e78 100%);
+  position: relative;
+}
+
+.main__lead__bg {
+  position: absolute;
+  width: 73.5897435897vw;
+  bottom: 0;
+  left: 0;
+}
+@media screen and (min-width: 1025px) {
+  .main__lead__bg {
+    width: 100%;
+  }
 }
 
 .main__lead__inner {
@@ -437,6 +450,12 @@ body {
   padding: 0 24px;
   display: flex;
   flex-direction: column;
+  gap: 48px;
+}
+@media screen and (min-width: 1025px) {
+  .text-flow {
+    gap: 80px;
+  }
 }
 
 .text-flow__line {
@@ -484,7 +503,12 @@ body {
 }
 
 .business__inner {
-  padding: 164px 0 120px 24px;
+  padding: 33px 0 51px 20px;
+}
+@media screen and (min-width: 1025px) {
+  .business__inner {
+    padding: 0 0 0 100px;
+  }
 }
 
 .business__category {
