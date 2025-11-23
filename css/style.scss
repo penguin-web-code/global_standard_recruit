@@ -98,6 +98,17 @@ body {
 // challenge
 .challenge {
   background: linear-gradient(270deg, #0291d9 0%, #023e78 100%);
+  position: relative;
+}
+.challenge__bg{
+  position: absolute;
+  width: calc(307 / 390 * 100vw);
+  top: 0;
+  right: 0;
+  z-index: 0;
+  @include mq(pc) {
+    width: calc(861 / 1440 * 100vw);
+  }
 }
 
 .challenge__inner {
@@ -113,6 +124,8 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   gap: 24px;
+  position: relative;
+  z-index: 1;
   @include mq(pc) {
     grid-template-columns: 1fr 1fr;
     align-items: start;

@@ -81,6 +81,20 @@ body {
 
 .challenge {
   background: linear-gradient(270deg, #0291d9 0%, #023e78 100%);
+  position: relative;
+}
+
+.challenge__bg {
+  position: absolute;
+  width: 78.7179487179vw;
+  top: 0;
+  right: 0;
+  z-index: 0;
+}
+@media screen and (min-width: 1025px) {
+  .challenge__bg {
+    width: 59.7916666667vw;
+  }
 }
 
 .challenge__inner {
@@ -98,6 +112,8 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   gap: 24px;
+  position: relative;
+  z-index: 1;
 }
 @media screen and (min-width: 1025px) {
   .challenge__items {
