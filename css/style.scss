@@ -174,13 +174,12 @@ dialog {
   font-size: 30px;
 }
 
-
 // challenge
 .challenge {
   background: linear-gradient(270deg, #0291d9 0%, #023e78 100%);
   position: relative;
 }
-.challenge__bg{
+.challenge__bg {
   position: absolute;
   width: calc(307 / 390 * 100vw);
   top: 0;
