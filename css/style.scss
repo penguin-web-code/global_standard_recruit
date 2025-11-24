@@ -1688,13 +1688,13 @@ dialog {
 .footer__inner {
   z-index: 1;
   padding-top: 40px;
-  padding-bottom: 32px;
+  padding-bottom: 92px;
   display: flex;
   flex-direction: column;
   position: relative;
   gap: 32px;
   @include mq(pc) {
-    padding: 80px 0 32px;
+    padding: 80px 0 64px;
     gap: 0px;
     flex-direction: row;
   }
@@ -1766,7 +1766,7 @@ address {
 .copyright {
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: 42px;
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
