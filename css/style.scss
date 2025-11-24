@@ -509,6 +509,7 @@ body {
 
   img {
     border-radius: 4px 0 0 4px;
+    width: 100%;
   }
 
   @include mq(pc) {
@@ -608,6 +609,12 @@ body {
 
 .business__category {
   @include mq(sp) {
+    gap: 11px 8px;
+    margin-bottom: 40px;
+    margin-right: 24px;
+    flex-wrap: wrap;
+  }
+  @include mq(tb) {
     gap: 11px 8px;
     margin-bottom: 40px;
     margin-right: 24px;
@@ -1442,6 +1449,9 @@ dialog {
   width: 100%;
   position: relative;
   box-shadow: 0 5px 15px rgba(26, 150, 239, 0.15);
+  img{
+    width: 100%;
+  }
 }
 
 .member__card__swiper-slide__lead {

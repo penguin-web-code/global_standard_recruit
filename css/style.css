@@ -501,6 +501,7 @@ body {
 }
 .main__lead__img img {
   border-radius: 4px 0 0 4px;
+  width: 100%;
 }
 @media screen and (min-width: 1025px) {
   .main__lead__img {
@@ -602,6 +603,14 @@ body {
   display: flex;
 }
 @media screen and (max-width: 767px) {
+  .business__category {
+    gap: 11px 8px;
+    margin-bottom: 40px;
+    margin-right: 24px;
+    flex-wrap: wrap;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
   .business__category {
     gap: 11px 8px;
     margin-bottom: 40px;
@@ -1459,6 +1468,9 @@ dialog.js-show::backdrop {
   width: 100%;
   position: relative;
   box-shadow: 0 5px 15px rgba(26, 150, 239, 0.15);
+}
+.member__card__swiper-slide__img img {
+  width: 100%;
 }
 
 .member__card__swiper-slide__lead {
