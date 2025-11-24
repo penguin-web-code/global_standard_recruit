@@ -584,6 +584,7 @@ width: 44%;
   color: $text-dark;
   border: 2px solid #0961b6;
   width: calc((100% - 8px) / 2);
+  cursor: pointer;
   @include mq(pc) {
     width: 298px;
     padding: 20px;

@@ -210,31 +210,62 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// business slider
-const businessCardSwiper = new Swiper('.business__card__swiper', { // swiperの名前
-  // 切り替えのモーション
-  speed: 1000, // 表示切り替えのスピード
-  effect: "slide", // 切り替えのmotion (※1)
-  allowTouchMove: true, // スワイプで表示の切り替えを有効に
 
-  // 最後→最初に戻るループ再生を有効に
+/* =========================================
+   Businessセクションのスライダー連携
+========================================= */
+
+// 1. Swiperの設定
+const businessCardSwiper = new Swiper('.business__card__swiper', {
+  // 切り替えのモーション
+  speed: 1000,
+  effect: "slide",
+  allowTouchMove: true,
+
+  // ★ループを有効にする場合、連動には「realIndex」などを使う必要があります
   loop: true,
 
-  // 自動スライドについて
-  // autoplay: { 
-  //   delay: 3000, // 何秒ごとにスライドを動かすか
-  // },
-
-  // 表示について
-  centeredSlides: false, // 中央寄せにしない
-  slidesPerView: "1.2",
+  // 表示について（SPの初期値）
+  centeredSlides: false,
+  slidesPerView: 1.2, // "1.2" でも動きますが数値の方が安全です
   spaceBetween: 16,
+  
+  // PC等の切り替え
   breakpoints: {
-    // 画面幅が1025px以上の場合
     1025: {
-      slidesPerView:"2.2",
-      spaceBetween:24,
+      slidesPerView: 2.2,
+      spaceBetween: 24,
     }
   },
 });
 
+// 2. カテゴリーボタンとSwiperの連動処理
+const categoryItems = document.querySelectorAll('.business__category__item');
+
+// 【A】ボタンをクリックしたらスライド移動
+categoryItems.forEach((item, index) => {
+  item.addEventListener('click', () => {
+    // ★ loop: true の場合は slideTo ではなく slideToLoop を使います
+    businessCardSwiper.slideToLoop(index);
+    
+    // 見た目を反映
+    updateActiveCategory(index);
+  });
+});
+
+// 【B】スライドが動いたらボタンの見た目を変える
+businessCardSwiper.on('slideChange', () => {
+  // ★ loop: true の場合は activeIndex ではなく realIndex（本当の番号）を使います
+  updateActiveCategory(businessCardSwiper.realIndex);
+});
+
+// 【共通】クラス（--active）を付け替える関数
+function updateActiveCategory(index) {
+  categoryItems.forEach(item => {
+    item.classList.remove('--active');
+  });
+  
+  if (categoryItems[index]) {
+    categoryItems[index].classList.add('--active');
+  }
+}
