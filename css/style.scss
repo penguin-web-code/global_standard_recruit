@@ -119,6 +119,9 @@ body {
   @include mq(sp) {
     display: none;
   }
+  @include mq(tb) {
+    display: none;
+  }
 }
 .header__btn {
   display: block;
@@ -291,6 +294,10 @@ body {
 // fv
 .fv {
   background: linear-gradient(270deg, #0a9ae5 0%, #023e78 100%);
+  position: relative;
+  overflow: hidden;
+}
+.fv__wrapper{
   position: relative;
 }
 .fv__lead {
