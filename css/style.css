@@ -17,7 +17,7 @@
 }
 @media screen and (min-width: 1025px) {
   .section__title {
-    margin-bottom: 64px;
+    margin-bottom: 59px;
   }
 }
 .section__title p {
@@ -93,6 +93,11 @@ body {
   padding: 18px 16px;
   display: flex;
   align-items: center;
+}
+@media screen and (min-width: 1025px) {
+  .header__inner {
+    padding: 13px 37px;
+  }
 }
 
 .header__nav {
@@ -335,6 +340,11 @@ body {
   background: linear-gradient(270deg, #0a9ae5 0%, #023e78 100%);
   padding-top: 113px;
 }
+@media screen and (min-width: 1025px) {
+  .fv__wrapper {
+    padding-top: 131px;
+  }
+}
 
 .fv__lead {
   position: absolute;
@@ -349,6 +359,7 @@ body {
   .fv__lead {
     gap: 20px;
     left: 40px;
+    bottom: -52px;
   }
 }
 .fv__lead p {
@@ -408,7 +419,7 @@ body {
 @media screen and (min-width: 1025px) {
   .images {
     grid-template-columns: repeat(7, 269px);
-    grid-template-rows: repeat(2, 280px);
+    grid-template-rows: repeat(2, 268px);
   }
 }
 .images img {
@@ -479,7 +490,7 @@ body {
   .main__lead__inner {
     padding: 293px 0 118px;
     flex-direction: row;
-    gap: 140px;
+    gap: 137px;
     margin-left: 100px;
   }
 }
@@ -493,7 +504,7 @@ body {
 }
 @media screen and (min-width: 1025px) {
   .main__lead__img {
-    width: 44%;
+    width: 48%;
   }
 }
 
@@ -507,7 +518,7 @@ body {
 }
 @media screen and (min-width: 1025px) {
   .text-flow {
-    gap: 0;
+    padding: 0;
   }
 }
 
@@ -515,6 +526,12 @@ body {
 /* 例: <p class="text-flow__line mb-large"> */
 .text-flow__line.mb-large {
   margin-bottom: 48px;
+}
+
+@media screen and (min-width: 1025px) {
+  .space-01 {
+    height: 63px !important;
+  }
 }
 
 .text-flow__line {
@@ -595,7 +612,7 @@ body {
 @media screen and (min-width: 1025px) {
   .business__category {
     flex-direction: row;
-    margin-bottom: 40px;
+    margin-bottom: 33px;
     gap: 16px;
   }
 }
@@ -612,7 +629,7 @@ body {
 @media screen and (min-width: 1025px) {
   .business__category__item {
     width: 298px;
-    padding: 20px;
+    padding: 20px 30px;
   }
 }
 .business__category__item.--active {
@@ -674,6 +691,11 @@ body {
   border-radius: 4px;
   background-color: #e4eaf1;
 }
+@media screen and (min-width: 1025px) {
+  .business__item {
+    padding: 28px 22px;
+  }
+}
 
 .business__item__en {
   color: #023e78;
@@ -685,6 +707,12 @@ body {
   letter-spacing: 0.36px;
   text-transform: uppercase;
   margin-bottom: 4px;
+}
+@media screen and (min-width: 1025px) {
+  .business__item__en {
+    font-size: 16px;
+    letter-spacing: 0.48px;
+  }
 }
 
 .business__item__ja {
@@ -705,12 +733,27 @@ body {
   letter-spacing: 0.6px;
   font-family: "Jost", sans-serif;
 }
+@media screen and (min-width: 1025px) {
+  .business__item__ja {
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+  .business__item__ja span {
+    font-size: 28px;
+    letter-spacing: 0.84px;
+  }
+}
 
 .business__item__img {
   margin-bottom: 12px;
 }
 .business__item__img img {
   width: 100%;
+}
+@media screen and (min-width: 1025px) {
+  .business__item__img {
+    margin-bottom: 20px;
+  }
 }
 
 .business__item__contents {
@@ -738,6 +781,17 @@ body {
   list-style-position: outside;
   padding-left: 1.5em;
 }
+@media screen and (min-width: 1025px) {
+  .business__item__contents {
+    margin-bottom: 32px;
+  }
+  .business__item__contents dt {
+    font-size: 18px;
+  }
+  .business__item__contents dd {
+    font-size: 16px;
+  }
+}
 
 .modal__open-btn {
   padding: 20px;
@@ -755,6 +809,11 @@ body {
   border: 1px solid transparent;
   transition: color 0.3s, border-color 0.3s;
   z-index: 1;
+}
+@media screen and (min-width: 1025px) {
+  .modal__open-btn {
+    padding: 20px 40px;
+  }
 }
 .modal__open-btn::before {
   content: "";
@@ -791,6 +850,13 @@ body {
 
 .modal__content {
   padding: 64px 16px 16px;
+}
+@media screen and (min-width: 1025px) {
+  .modal__content {
+    padding: 48px;
+    margin-top: 88px;
+    margin-bottom: 42px;
+  }
 }
 
 .modal__head__en {
@@ -899,6 +965,11 @@ body {
   transform: translateY(-50%);
   right: 45px;
 }
+@media screen and (min-width: 1025px) {
+  .modal__entry::after {
+    right: calc(50% - 110px);
+  }
+}
 
 /* 初期設定 */
 button {
@@ -986,6 +1057,9 @@ dialog.js-show::backdrop {
 @media screen and (min-width: 1025px) {
   .modal__close-btn {
     flex-direction: column-reverse;
+    right: 48px;
+    top: 48px;
+    align-items: flex-end;
   }
 }
 
@@ -1013,8 +1087,8 @@ dialog.js-show::backdrop {
 }
 @media screen and (min-width: 1025px) {
   .challenge__inner {
-    padding-top: 222px;
-    padding-bottom: 133px;
+    padding-top: 230px;
+    padding-bottom: 152px;
   }
 }
 
@@ -1030,6 +1104,7 @@ dialog.js-show::backdrop {
     grid-template-columns: 1fr 1fr;
     align-items: start;
     row-gap: 96px;
+    column-gap: 72px;
   }
   .challenge__items > *:first-child {
     /* ここに左カラム専用のスタイルを書く */
@@ -1204,7 +1279,7 @@ dialog.js-show::backdrop {
 }
 @media screen and (min-width: 1025px) {
   .swiper-button-prev {
-    right: 15.2777777778vw;
+    right: 14.277778vw;
   }
 }
 
@@ -1311,6 +1386,12 @@ dialog.js-show::backdrop {
   right: 1px;
   top: -29px;
   z-index: 3;
+}
+@media screen and (min-width: 1025px) {
+  .member__card__swiper-slide__number {
+    right: 8px;
+    top: -23px;
+  }
 }
 
 .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
@@ -1437,6 +1518,7 @@ dialog.js-show::backdrop {
   .culture__item {
     flex-direction: row;
     align-items: center;
+    padding: 26px 24px;
   }
 }
 
@@ -1634,7 +1716,8 @@ dialog.js-show::backdrop {
 @media screen and (min-width: 1025px) {
   .faq__inner {
     flex-direction: row;
-    gap: 11.1111111111vw;
+    gap: 16.111111vw;
+    padding-top: 130px;
   }
 }
 
@@ -1645,6 +1728,11 @@ dialog.js-show::backdrop {
   z-index: 1;
   position: relative;
   width: 100%;
+}
+@media screen and (min-width: 1025px) {
+  .faq__items {
+    gap: 30px;
+  }
 }
 
 .faq__item {
@@ -1705,6 +1793,28 @@ dialog.js-show::backdrop {
 .faq__item dt.--open img {
   transform: rotate(180deg);
 }
+@media screen and (min-width: 1025px) {
+  .faq__item {
+    padding: 23px 8px 20px;
+  }
+  .faq__item dt {
+    padding-bottom: 16px;
+    gap: 23px;
+    padding: 0 44px 13px;
+  }
+  .faq__item dt span {
+    width: 36px;
+    font-size: 28px;
+    line-height: 1.4;
+  }
+  .faq__item dt p {
+    font-size: 20px;
+  }
+  .faq__item dd {
+    font-size: 16px;
+    padding: 16px 48px 0;
+  }
+}
 
 .cta {
   padding: 12px;
@@ -1714,7 +1824,7 @@ dialog.js-show::backdrop {
 }
 @media screen and (min-width: 1025px) {
   .cta {
-    padding: 32px;
+    padding: 55px;
   }
 }
 
@@ -1794,7 +1904,7 @@ dialog.js-show::backdrop {
     font-size: 56px;
     letter-spacing: 1.68px;
     text-transform: uppercase;
-    margin-bottom: 36px;
+    margin-bottom: 20px;
   }
 }
 
@@ -1846,13 +1956,13 @@ dialog.js-show::backdrop {
 
 /* ホバー時のアニメーション */
 .cta__content:hover .door-left {
-  width: 35%;
-  transform: rotateY(24deg) scaleX(0.8);
+  width: 60%;
+  transform: rotateY(61deg) scaleX(0.8);
 }
 
 .cta__content:hover .door-right {
-  width: 35%;
-  transform: rotateY(-24deg) scaleX(0.8);
+  width: 60%;
+  transform: rotateY(-61deg) scaleX(0.8);
 }
 
 .footer {
@@ -1884,7 +1994,7 @@ dialog.js-show::backdrop {
 }
 @media screen and (min-width: 1025px) {
   .footer__inner {
-    padding: 80px 0 64px;
+    padding: 84px 23px 64px;
     gap: 0px;
     flex-direction: row;
   }
@@ -1932,6 +2042,7 @@ address {
   .footer__menu {
     flex-direction: row;
     gap: 20px;
+    padding-bottom: 75px;
   }
 }
 
@@ -1973,10 +2084,20 @@ address {
 .footer__menu__item:hover::after {
   transform: scaleX(1); /* 幅を100%にする */
 }
+@media screen and (min-width: 1025px) {
+  .footer__menu__item {
+    padding: 12px 0;
+  }
+}
 
 .footer__sns {
   display: flex;
   gap: 36px;
+}
+@media screen and (min-width: 1025px) {
+  .footer__sns {
+    padding-left: 16px;
+  }
 }
 
 .footer__sns__item {
@@ -1994,4 +2115,10 @@ address {
   font-style: normal;
   font-weight: 500;
   line-height: 1.5; /* 18px */
+}
+@media screen and (min-width: 1025px) {
+  .copyright {
+    left: 25px;
+    bottom: 94px;
+  }
 }

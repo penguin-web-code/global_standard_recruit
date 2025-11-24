@@ -41,7 +41,7 @@ $width-inner: 1240px;
   position: relative;
   z-index: 2;
   @include mq(pc) {
-    margin-bottom: 64px;
+    margin-bottom: 59px;
   }
   p {
     font-size: 32px;
@@ -110,6 +110,9 @@ body {
   padding: 18px 16px;
   display: flex;
   align-items: center;
+  @include mq(pc) {
+    padding: 13px 37px;
+  }
 }
 .header__nav {
   display: flex;
@@ -341,6 +344,9 @@ body {
   position: relative;
   background: linear-gradient(270deg, #0a9ae5 0%, #023e78 100%);
   padding-top: 113px;
+  @include mq(pc) {
+    padding-top: 131px;
+  }
 }
 .fv__lead {
   position: absolute;
@@ -353,6 +359,7 @@ body {
   @include mq(pc) {
     gap: 20px;
     left: 40px;
+    bottom: -52px;
   }
   p {
     background: rgba(255, 255, 255, 0.7);
@@ -409,7 +416,7 @@ body {
   grid-template-rows: repeat(2, 260px);
   @include mq(pc) {
     grid-template-columns: repeat(7, 269px);
-    grid-template-rows: repeat(2, 280px);
+    grid-template-rows: repeat(2, 268px);
   }
 
   img {
@@ -489,7 +496,7 @@ body {
 
     flex-direction: row;
 
-    gap: 140px;
+    gap: 137px;
 
     margin-left: 100px;
   }
@@ -505,7 +512,7 @@ body {
   }
 
   @include mq(pc) {
-    width: 44%;
+    width: 48%;
   }
 }
 .text-flow {
@@ -517,7 +524,7 @@ body {
   gap: 10px; /* 行間はline-heightで制御するか、段落の間だけmarginを入れる */
 
   @include mq(pc) {
-    gap: 0;
+    padding: 0;
   }
 }
 
@@ -525,6 +532,11 @@ body {
 /* 例: <p class="text-flow__line mb-large"> */
 .text-flow__line.mb-large {
   margin-bottom: 48px;
+}
+.space-01 {
+  @include mq(pc) {
+    height: 63px !important;
+  }
 }
 
 .text-flow__line {
@@ -604,7 +616,7 @@ body {
   display: flex;
   @include mq(pc) {
     flex-direction: row;
-    margin-bottom: 40px;
+    margin-bottom: 33px;
     gap: 16px;
   }
 }
@@ -619,7 +631,7 @@ body {
   cursor: pointer;
   @include mq(pc) {
     width: 298px;
-    padding: 20px;
+    padding: 20px 30px;
   }
   &.--active {
     color: $text-sub;
@@ -674,6 +686,9 @@ body {
   padding: 12px;
   border-radius: 4px;
   background-color: $bg-02;
+  @include mq(pc) {
+    padding: 28px 22px;
+  }
 }
 
 .business__item__en {
@@ -686,6 +701,10 @@ body {
   letter-spacing: 0.36px;
   text-transform: uppercase;
   margin-bottom: 4px;
+  @include mq(pc) {
+    font-size: 16px;
+    letter-spacing: 0.48px;
+  }
 }
 
 .business__item__ja {
@@ -705,12 +724,23 @@ body {
     letter-spacing: 0.6px;
     font-family: $font-en;
   }
+  @include mq(pc) {
+    font-size: 24px;
+    margin-bottom: 24px;
+    span{
+      font-size: 28px;
+      letter-spacing: 0.84px;
+    }
+  }
 }
 
 .business__item__img {
   margin-bottom: 12px;
   img {
     width: 100%;
+  }
+  @include mq(pc) {
+    margin-bottom: 20px;
   }
 }
 
@@ -738,6 +768,15 @@ body {
       padding-left: 1.5em;
     }
   }
+  @include mq(pc) {
+    margin-bottom: 32px;
+    dt{
+      font-size: 18px;
+    }
+    dd{
+      font-size: 16px;
+    }
+  }
 }
 
 .modal__open-btn {
@@ -756,6 +795,9 @@ body {
   border: 1px solid transparent;
   transition: color 0.3s, border-color 0.3s;
   z-index: 1;
+  @include mq(pc) {
+    padding: 20px 40px;
+  }
   &::before {
     content: '';
     position: absolute;
@@ -800,6 +842,11 @@ body {
 
 .modal__content {
   padding: 64px 16px 16px;
+  @include mq(pc) {
+    padding: 48px;
+    margin-top: 88px;
+    margin-bottom: 42px;
+  }
 }
 
 .modal__close-btn {
@@ -909,6 +956,9 @@ body {
     top: 50%;
     transform: translateY(-50%);
     right: 45px;
+    @include mq(pc) {
+      right: calc(50% + -110px);
+    }
   }
 }
 
@@ -1002,6 +1052,9 @@ dialog {
   }
   @include mq(pc) {
     flex-direction: column-reverse;
+    right: 48px;
+    top: 48px;
+    align-items: flex-end;
   }
 }
 
@@ -1025,8 +1078,8 @@ dialog {
   padding-top: 74px;
   padding-bottom: 80px;
   @include mq(pc) {
-    padding-top: 222px;
-    padding-bottom: 133px;
+    padding-top: 230px;
+    padding-bottom: 152px;
   }
 }
 
@@ -1040,6 +1093,7 @@ dialog {
     grid-template-columns: 1fr 1fr;
     align-items: start;
     row-gap: 96px;
+    column-gap: 72px;
     > *:first-child {
       /* ここに左カラム専用のスタイルを書く */
       margin-top: 64px;
@@ -1203,7 +1257,7 @@ dialog {
 .swiper-button-prev {
   right: 86px;
   @include mq(pc) {
-    right: calc(220 / 1440 * 100vw);
+    right: 14.277778vw;
   }
 }
 
@@ -1323,6 +1377,10 @@ dialog {
   right: 1px;
   top: -29px;
   z-index: 3;
+  @include mq(pc) {
+    right: 8px;
+    top: -23px;
+  }
 }
 .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
   background: $text-dark !important;
@@ -1450,6 +1508,7 @@ dialog {
   @include mq(pc) {
     flex-direction: row;
     align-items: center;
+    padding: 26px 24px;
   }
 }
 
@@ -1616,7 +1675,8 @@ dialog {
   flex-direction: column;
   @include mq(pc) {
     flex-direction: row;
-    gap: calc(160 / 1440 * 100vw);
+    gap: 16.111111vw;
+    padding-top: 130px;
   }
 }
 
@@ -1627,6 +1687,9 @@ dialog {
   z-index: 1;
   position: relative;
   width: 100%;
+  @include mq(pc) {
+    gap: 30px;
+  }
 }
 
 .faq__item {
@@ -1687,6 +1750,26 @@ dialog {
   dt.--open img {
     transform: rotate(180deg);
   }
+  @include mq(pc) {
+    padding: 23px 8px 20px;
+    dt{
+      padding-bottom: 16px;
+      gap: 23px;
+      padding: 0 44px 13px;
+      span{
+        width: 36px;
+        font-size: 28px;
+        line-height: 1.4;
+      }
+      p{
+        font-size: 20px;
+      }
+    }
+    dd{
+      font-size: 16px;
+      padding: 16px 48px 0;
+    }
+  }
 }
 
 // cta
@@ -1696,7 +1779,7 @@ dialog {
   position: relative;
   z-index: 1;
   @include mq(pc) {
-    padding: 32px;
+    padding: 55px;
   }
 }
 .cta__content {
@@ -1768,7 +1851,7 @@ dialog {
     font-size: 56px;
     letter-spacing: 1.68px;
     text-transform: uppercase;
-    margin-bottom: 36px;
+    margin-bottom: 20px;
   }
 }
 
@@ -1816,13 +1899,13 @@ dialog {
 
 /* ホバー時のアニメーション */
 .cta__content:hover .door-left {
-  width: 35%;
-  transform: rotateY(24deg) scaleX(0.8);
+  width: 60%;
+  transform: rotateY(61deg) scaleX(0.8);
 }
 
 .cta__content:hover .door-right {
-  width: 35%;
-  transform: rotateY(-24deg) scaleX(0.8);
+  width: 60%;
+  transform: rotateY(-61deg) scaleX(0.8);
 }
 
 // footer
@@ -1850,7 +1933,7 @@ dialog {
   position: relative;
   gap: 32px;
   @include mq(pc) {
-    padding: 80px 0 64px;
+    padding: 84px 23px 64px;
     gap: 0px;
     flex-direction: row;
   }
@@ -1894,6 +1977,7 @@ address {
   @include mq(pc) {
     flex-direction: row;
     gap: 20px;
+    padding-bottom: 75px;
   }
 }
 .footer__menu__contents {
@@ -1932,11 +2016,17 @@ address {
   &:hover::after {
     transform: scaleX(1); /* 幅を100%にする */
   }
+  @include mq(pc) {
+    padding: 12px 0;
+  }
 }
 
 .footer__sns {
   display: flex;
   gap: 36px;
+  @include mq(pc) {
+    padding-left: 16px;
+  }
 }
 
 .footer__sns__item {
@@ -1953,4 +2043,8 @@ address {
   font-style: normal;
   font-weight: 500;
   line-height: 1.5; /* 18px */
+  @include mq(pc) {
+    left: 25px;
+    bottom: 94px;
+  }
 }
