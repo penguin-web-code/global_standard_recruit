@@ -286,13 +286,14 @@ body {
 }
 
 .fv {
-  background: linear-gradient(270deg, #0a9ae5 0%, #023e78 100%);
   position: relative;
   overflow: hidden;
 }
 
 .fv__wrapper {
   position: relative;
+  background: linear-gradient(270deg, #0a9ae5 0%, #023e78 100%);
+  padding-top: 113px;
 }
 
 .fv__lead {
@@ -462,7 +463,7 @@ body {
   display: flex;
   flex-direction: column;
   /* gap: 48px;  <-- これだと行間が開きすぎるので変更 */
-  gap: 0; /* 行間はline-heightで制御するか、段落の間だけmarginを入れる */
+  gap: 10px; /* 行間はline-heightで制御するか、段落の間だけmarginを入れる */
 }
 @media screen and (min-width: 1025px) {
   .text-flow {
@@ -733,6 +734,12 @@ body {
   font-weight: 500;
   line-height: 1.7; /* 22.4px */
 }
+@media screen and (min-width: 1025px) {
+  .modal__head__en {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+}
 
 .modal__head__ja {
   display: flex;
@@ -750,10 +757,19 @@ body {
   font-style: italic;
   font-family: "Jost", sans-serif;
 }
+@media screen and (min-width: 1025px) {
+  .modal__head__ja {
+    font-size: 28px;
+  }
+  .modal__head__ja span {
+    font-size: 30px;
+  }
+}
 
 .modal__text {
   display: flex;
   flex-direction: column;
+  margin-bottom: 1px;
 }
 .modal__text dl {
   padding: 12px 0;
@@ -777,6 +793,21 @@ body {
   list-style-type: disc;
   list-style-position: outside;
   padding-left: 1.5em;
+}
+@media screen and (min-width: 1025px) {
+  .modal__text {
+    margin-bottom: 40px;
+  }
+  .modal__text dl {
+    display: flex;
+  }
+  .modal__text dt {
+    width: 26.25vw;
+    font-size: 18px;
+  }
+  .modal__text dd {
+    font-size: 16px;
+  }
 }
 
 .modal__entry {
@@ -842,7 +873,7 @@ dialog.js-show::backdrop {
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
   /* モーダル枠組みのスタイル */
-  width: min(600px, 95%);
+  width: min(1200px, 95%);
   background: #fff;
   margin-top: 15px;
   border-radius: 12px;
@@ -884,6 +915,11 @@ dialog.js-show::backdrop {
   font-style: normal;
   font-weight: 500;
   line-height: 1.7; /* 20.4px */
+}
+@media screen and (min-width: 1025px) {
+  .modal__close-btn {
+    flex-direction: column-reverse;
+  }
 }
 
 .challenge {
@@ -1245,12 +1281,16 @@ dialog.js-show::backdrop {
 /* 動くバー（青い部分） */
 .member__card__swiper-container .swiper-scrollbar-drag {
   /* 元の .swiper-pagination-progressbar-fill のスタイルを移植 */
-  background: #023e78 !important; /* 青色 */
+  background: #0961B6 !important; /* 青色 */
   border-radius: 0; /* 丸みを消す */
   /* スクロールバー特有の調整 */
   position: relative;
   top: 0;
   height: 100%;
+}
+
+.swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled {
+  opacity: 1 !important;
 }
 
 .swiper-button-prev,

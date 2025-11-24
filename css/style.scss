@@ -293,12 +293,13 @@ body {
 }
 // fv
 .fv {
-  background: linear-gradient(270deg, #0a9ae5 0%, #023e78 100%);
   position: relative;
   overflow: hidden;
 }
 .fv__wrapper{
   position: relative;
+  background: linear-gradient(270deg, #0a9ae5 0%, #023e78 100%);
+  padding-top: 113px;
 }
 .fv__lead {
   position: absolute;
@@ -490,7 +491,7 @@ width: 44%;
   display: flex;
   flex-direction: column;
   /* gap: 48px;  <-- これだと行間が開きすぎるので変更 */
-  gap: 0; /* 行間はline-heightで制御するか、段落の間だけmarginを入れる */
+  gap: 10px; /* 行間はline-heightで制御するか、段落の間だけmarginを入れる */
   
   @include mq(pc) {
     gap: 0;
@@ -760,6 +761,10 @@ width: 44%;
   font-style: italic;
   font-weight: 500;
   line-height: 1.7; /* 22.4px */
+  @include mq(pc) {
+    font-size: 18px;
+    line-height: 1.6;
+  }
 }
 
 .modal__head__ja {
@@ -777,10 +782,17 @@ width: 44%;
     font-style: italic;
     font-family: $font-en;
   }
+  @include mq(pc) {
+    font-size: 28px;
+    span{
+      font-size: 30px;
+    }
+  }
 }
 .modal__text {
   display: flex;
   flex-direction: column;
+  margin-bottom: 1px;
   dl {
     padding: 12px 0;
     border-bottom: 1px solid #c4ccd7;
@@ -802,6 +814,19 @@ width: 44%;
       list-style-type: disc;
       list-style-position: outside;
       padding-left: 1.5em;
+    }
+  }
+  @include mq(pc) {
+    margin-bottom: 40px;
+    dl{
+      display: flex;
+    }
+    dt{
+      width: calc(378 / 1440 * 100vw);
+      font-size: 18px;
+    }
+    dd{
+      font-size: 16px;
     }
   }
 }
@@ -876,7 +901,7 @@ dialog {
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
   /* モーダル枠組みのスタイル */
-  width: min(600px, 95%);
+  width: min(1200px, 95%);
   background: #fff;
   margin-top: 15px;
   border-radius: 12px;
@@ -917,6 +942,9 @@ dialog {
     font-style: normal;
     font-weight: 500;
     line-height: 1.7; /* 20.4px */
+  }
+  @include mq(pc) {
+    flex-direction: column-reverse;
   }
 }
 
@@ -1273,13 +1301,17 @@ dialog {
 /* 動くバー（青い部分） */
 .member__card__swiper-container .swiper-scrollbar-drag {
   /* 元の .swiper-pagination-progressbar-fill のスタイルを移植 */
-  background: $text-dark !important; /* 青色 */
+  background: #0961B6 !important; /* 青色 */
   border-radius: 0; /* 丸みを消す */
   
   /* スクロールバー特有の調整 */
   position: relative;
   top: 0;
   height: 100%;
+}
+.swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled{
+  opacity: 1 !important;
+
 }
 .swiper-button-prev,
 .swiper-button-next {
