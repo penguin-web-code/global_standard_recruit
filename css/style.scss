@@ -1656,10 +1656,10 @@ dialog {
   width: calc(276 / 390 * 100vw);
   left: 0;
   z-index: 0;
-  top: 650px;
+  top: 1290px;
   @include mq(pc) {
     width: calc(584 / 1440 * 100vw);
-    top: 200px;
+    top: 510px;
   }
 }
 .faq__accent {

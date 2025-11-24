@@ -1691,12 +1691,12 @@ dialog.js-show::backdrop {
   width: 70.7692307692vw;
   left: 0;
   z-index: 0;
-  top: 650px;
+  top: 1290px;
 }
 @media screen and (min-width: 1025px) {
   .faq__bg {
     width: 40.5555555556vw;
-    top: 200px;
+    top: 510px;
   }
 }
 
