@@ -1230,6 +1230,11 @@ dialog.js-show::backdrop {
   width: 100%;
   border-radius: 4px;
 }
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .challenge__item__img img {
+    border-radius: 12px;
+  }
+}
 
 /* ================================
    本題のCSS
@@ -1281,6 +1286,20 @@ dialog.js-show::backdrop {
 .swiper-button-next svg {
   width: 100%;
   height: 100%;
+}
+.swiper-button-prev:hover svg,
+.swiper-button-next:hover svg {
+  /* 1. 外側の円 (rect) */
+  /* 2. 中の矢印 (path) */
+}
+.swiper-button-prev:hover svg rect,
+.swiper-button-next:hover svg rect {
+  fill: #023E78 !important; /* 背景を青に塗りつぶす */
+  stroke: #fff !important; /* 枠線を白にする */
+}
+.swiper-button-prev:hover svg path,
+.swiper-button-next:hover svg path {
+  stroke: #fff !important; /* 矢印を白にする */
 }
 
 .swiper-button-prev {
