@@ -1,3 +1,5 @@
+new WOW().init();
+
 // アコーディオン
 $(".js-q").click(function() {
   $(this).next(".js-a").slideToggle(300);
