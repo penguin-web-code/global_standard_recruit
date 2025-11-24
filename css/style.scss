@@ -29,11 +29,11 @@ $font-en: 'Jost', sans-serif;
 $width-inner: 1240px;
 
 .section__inner {
-  margin-left: 24px;
-  margin-right: 24px;
+  margin-left: calc(24 / 390 * 100vw);
+  margin-right: calc(24 / 390 * 100vw);
   @include mq(pc) {
-    margin-left: 100px;
-    margin-right: 100px;
+    margin-left: calc(100 / 1440 * 100vw);
+    margin-right: calc(100 / 1440 * 100vw);
   }
 }
 .section__title {

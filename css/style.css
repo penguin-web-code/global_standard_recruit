@@ -1,12 +1,12 @@
 @charset "UTF-8";
 .section__inner {
-  margin-left: 24px;
-  margin-right: 24px;
+  margin-left: 6.1538461538vw;
+  margin-right: 6.1538461538vw;
 }
 @media screen and (min-width: 1025px) {
   .section__inner {
-    margin-left: 100px;
-    margin-right: 100px;
+    margin-left: 6.9444444444vw;
+    margin-right: 6.9444444444vw;
   }
 }
 
