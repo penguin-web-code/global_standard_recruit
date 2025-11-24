@@ -21,6 +21,7 @@
   }
 }
 .section__title p {
+  width: fit-content;
   font-size: 32px;
   font-style: italic;
   font-weight: 500;
