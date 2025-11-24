@@ -1455,13 +1455,14 @@ dialog.js-show::backdrop {
 .faq__bg {
   position: absolute;
   width: 70.7692307692vw;
-  bottom: 0;
   left: 0;
   z-index: 0;
+  top: 650px;
 }
 @media screen and (min-width: 1025px) {
   .faq__bg {
     width: 40.5555555556vw;
+    top: 200px;
   }
 }
 
@@ -1503,6 +1504,7 @@ dialog.js-show::backdrop {
   gap: 20px;
   z-index: 1;
   position: relative;
+  width: 100%;
 }
 
 .faq__item {

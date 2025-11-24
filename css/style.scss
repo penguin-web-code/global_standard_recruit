@@ -1429,11 +1429,12 @@ dialog {
 .faq__bg {
   position: absolute;
   width: calc(276 / 390 * 100vw);
-  bottom: 0;
   left: 0;
   z-index: 0;
+  top: 650px;
   @include mq(pc) {
     width: calc(584 / 1440 * 100vw);
+    top: 200px;
   }
 }
 .faq__accent {
@@ -1469,6 +1470,7 @@ dialog {
   gap: 20px;
   z-index: 1;
   position: relative;
+  width: 100%;
 }
 
 .faq__item {
