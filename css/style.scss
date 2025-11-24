@@ -292,7 +292,6 @@ body {
 .fv {
   background: linear-gradient(270deg, #0a9ae5 0%, #023e78 100%);
   position: relative;
-  overflow: hidden;
 }
 .fv__lead {
   position: absolute;
@@ -333,6 +332,7 @@ body {
 .images-scroll {
   --images-width: 0px;
   --image-gap: 12px;
+  overflow: hidden;
   @include mq(pc) {
     --image-gap: 20px;
   }
