@@ -25,10 +25,15 @@ const cardSwiper = new Swiper('.member__card__swiper', { // swiperの名前
   spaceBetween: 20,
 
   // ページネーション
-  pagination: {
-    el: ".swiper-pagination", // paginationのclass
-    clickable: true, // クリックでの切り替えを有効に
-    type: "progressbar" // paginationのタイプ (※2)
+  // pagination: {
+  //   el: ".swiper-pagination", // paginationのclass
+  //   clickable: true, // クリックでの切り替えを有効に
+  //   type: "progressbar" // paginationのタイプ (※2)
+  // },
+  scrollbar: {
+    el: '.swiper-scrollbar',
+    draggable: true, // ドラッグ操作を許可するか（お好みで）
+    hide: false,     // 常に表示する
   },
 
   // ナビゲーション

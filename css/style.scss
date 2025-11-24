@@ -214,7 +214,7 @@ body {
   padding: 92px 20px 28px;
   position: relative;
 }
-.drawer__logo{
+.drawer__logo {
   position: absolute;
   width: 175px;
   left: 16px;
@@ -409,9 +409,9 @@ body {
   background: linear-gradient(270deg, #0291d9 0%, #023e78 100%);
   position: relative;
 }
-.main__lead__bg{
+.main__lead__bg {
   position: absolute;
-  width: calc(287 /390 * 100vw);
+  width: calc(287 / 390 * 100vw);
   bottom: 0;
   left: 0;
   @include mq(pc) {
@@ -502,23 +502,22 @@ body {
 .business__inner {
   padding: 33px 0 51px 20px;
   @include mq(pc) {
-     padding: 0 0 0 100px;
+    padding: 0 0 0 100px;
   }
 }
 
 .business__category {
   @include mq(sp) {
     gap: 16px 8px;
-  margin-bottom: 40px;
-  margin-right: 24px;
-  flex-wrap: wrap;
+    margin-bottom: 40px;
+    margin-right: 24px;
+    flex-wrap: wrap;
   }
   display: flex;
   @include mq(pc) {
     flex-direction: row;
     margin-bottom: 40px;
     gap: 16px;
-
   }
 }
 
@@ -533,7 +532,7 @@ body {
     width: 298px;
     padding: 20px;
   }
-  &.--active{
+  &.--active {
     color: $text-sub;
     background-color: $text-dark;
     border: 1px solid #fff;
@@ -1041,8 +1040,8 @@ dialog {
   width: 40px;
   height: 40px;
   @include mq(pc) {
-    width: 80px;
-    height: 80px;
+    width: calc(80 / 1440 * 100vw);
+    height: calc(80 / 1440 * 100vw);
   }
 
   svg {
@@ -1124,6 +1123,7 @@ dialog {
 }
 
 .member__card__swiper {
+  padding-top: 30px;
 }
 
 .swiper-wrapper {
@@ -1137,6 +1137,35 @@ dialog {
 
 .member__card__swiper-slide {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+.member__card__swiper-slide__description {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  left: 0;
+  bottom: 24px;
+  p {
+    width: fit-content;
+    padding: 4px 16px;
+    background-color: $text-sub;
+    color: $text-dark;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.5; /* 30px */
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  span {
+    font-size: 16px;
+    letter-spacing: 0.8px;
+  }
 }
 .member__card__swiper-slide__number {
   position: absolute;
@@ -1145,41 +1174,66 @@ dialog {
   top: -20px;
   z-index: 3;
 }
-.swiper-pagination-progressbar .swiper-pagination-progressbar-fill{
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
   background: $text-dark !important;
-
 }
-.swiper-pagination-progressbar{
-  background: #C4CCD7 !important;
-
+.swiper-pagination-progressbar {
+  background: #c4ccd7 !important;
 }
-.swiper-horizontal > .swiper-pagination-progressbar,
-.swiper-pagination-progressbar.swiper-pagination-horizontal,
-.swiper-pagination-progressbar.swiper-pagination-vertical.swiper-pagination-progressbar-opposite,
-.swiper-vertical
-  > .swiper-pagination-progressbar.swiper-pagination-progressbar-opposite {
+/* ===================================
+   Swiper Scrollbar (進捗バー風カスタム)
+=================================== */
+
+/* バーの背景（グレーの軌道部分） */
+.member__card__swiper-container .swiper-scrollbar {
+  /* 元の .swiper-pagination-progressbar のスタイルを移植 */
+  position: absolute;
+  left: 0;
+  width: 95%; /* 元の幅指定 */
+  height: 4px; /* 元のプログレスバーの高さに合わせる（※数値は確認してください） */
+  background: #C4CCD7 !important; /* 軌道の色 */
+  border-radius: 0; /* 丸みを消す */
+  opacity: 1 !important;
+  
+  /* 位置調整（元のCSSから移植） */
   top: auto !important;
   bottom: -64px !important;
-  width: 95%;
+  
   @include mq(pc) {
     width: calc(976 / 1440 * 100vw);
-    bottom: -103px !important;
+    bottom: calc(-103 /1440 *100vw) !important;
   }
+}
+
+/* 動くバー（青い部分） */
+.member__card__swiper-container .swiper-scrollbar-drag {
+  /* 元の .swiper-pagination-progressbar-fill のスタイルを移植 */
+  background: $text-dark !important; /* 青色 */
+  border-radius: 0; /* 丸みを消す */
+  
+  /* スクロールバー特有の調整 */
+  position: relative;
+  top: 0;
+  height: 100%;
 }
 .swiper-button-prev,
 .swiper-button-next {
   top: auto !important;
   bottom: -170px;
+  @include mq(pc) {
+    bottom: calc(-170 / 1440 * 100vw);
+  }
 }
 
 .member__card__swiper-slide__img {
   margin-bottom: 20px;
   width: 100%;
+  position: relative;
 }
 
 .member__card__swiper-slide__lead {
   padding: 12px 16px;
-  height: calc(2em * 8);
+  flex-grow: 1;
   background-color: $bg-03;
   color: $text-sub;
   color: var(--, #fff);
@@ -1189,7 +1243,6 @@ dialog {
   line-height: 2; /* 30px */
   letter-spacing: 0.3px;
   @include mq(pc) {
-    height: calc(2em * 7);
   }
 }
 
