@@ -59,18 +59,18 @@
 
 @media screen and (min-width: 1025px) {
   .is-sp {
-    display: none;
+    display: none !important;
   }
 }
 
 @media screen and (max-width: 767px) {
   .is-pc {
-    display: none;
+    display: none !important;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .is-pc {
-    display: none;
+    display: none !important;
   }
 }
 
@@ -90,7 +90,7 @@ body {
 }
 
 .header__inner {
-  padding: 12px 16px;
+  padding: 18px 16px;
   display: flex;
   align-items: center;
 }
@@ -147,7 +147,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #023E78; /* 指定の濃い青 */
+  background-color: #023e78; /* 指定の濃い青 */
   z-index: -1; /* 文字の下に配置 */
   /* 左下(0% 100%)を中心とした円形で切り抜く */
   /* 最初は半径0%（見えない） */
@@ -202,10 +202,10 @@ body {
 .drawer__icon {
   position: fixed;
   z-index: 102;
-  top: 20px;
-  right: 16px;
+  top: 29px;
+  right: 21px;
   width: 40px;
-  height: 15px;
+  height: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -218,7 +218,7 @@ body {
 
 .drawer__icon--bar {
   width: 100%;
-  height: 1px;
+  height: 2px;
   background: #fff;
 }
 
@@ -339,7 +339,7 @@ body {
 .fv__lead {
   position: absolute;
   left: 20px;
-  bottom: -40px;
+  bottom: -27px;
   z-index: 3;
   display: flex;
   flex-direction: column;
@@ -470,7 +470,7 @@ body {
 }
 
 .main__lead__inner {
-  padding: 176px 0 131px;
+  padding: 165px 0 131px;
   display: flex;
   flex-direction: column;
   gap: 64px;
@@ -573,7 +573,7 @@ body {
 }
 
 .business__inner {
-  padding: 33px 0 51px 20px;
+  padding: 38px 0 51px 20px;
 }
 @media screen and (min-width: 1025px) {
   .business__inner {
@@ -586,7 +586,7 @@ body {
 }
 @media screen and (max-width: 767px) {
   .business__category {
-    gap: 16px 8px;
+    gap: 11px 8px;
     margin-bottom: 40px;
     margin-right: 24px;
     flex-wrap: wrap;
@@ -696,6 +696,7 @@ body {
   font-style: normal;
   font-weight: 700;
   line-height: 1.6; /* 28.8px */
+  margin-bottom: 12px;
 }
 .business__item__ja span {
   font-size: 20px;
@@ -778,8 +779,8 @@ body {
   transform: translateY(-50%);
 }
 .modal__open-btn:hover {
-  color: #023E78;
-  border-color: #023E78;
+  color: #023e78;
+  border-color: #023e78;
 }
 .modal__open-btn:hover::before {
   clip-path: circle(150% at 0% 100%);
@@ -1007,7 +1008,7 @@ dialog.js-show::backdrop {
 }
 
 .challenge__inner {
-  padding-top: 120px;
+  padding-top: 74px;
   padding-bottom: 80px;
 }
 @media screen and (min-width: 1025px) {
@@ -1020,7 +1021,7 @@ dialog.js-show::backdrop {
 .challenge__items {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 24px;
+  gap: 26px;
   position: relative;
   z-index: 1;
 }
@@ -1045,16 +1046,16 @@ dialog.js-show::backdrop {
   background: rgba(244, 251, 255, 0.7);
 }
 .challenge__item.--01 {
-  border-bottom: 12px solid #37a4db;
+  border-bottom: 14px solid #37a4db;
 }
 .challenge__item.--02 {
-  border-bottom: 12px solid #2766ae;
+  border-bottom: 14px solid #2766ae;
 }
 .challenge__item.--03 {
-  border-bottom: 12px solid #025178;
+  border-bottom: 14px solid #025178;
 }
 .challenge__item.--04 {
-  border-bottom: 12px solid #023e78;
+  border-bottom: 14px solid #023e78;
 }
 @media screen and (min-width: 1025px) {
   .challenge__item {
@@ -1199,7 +1200,7 @@ dialog.js-show::backdrop {
 }
 
 .swiper-button-prev {
-  right: 100px;
+  right: 86px;
 }
 @media screen and (min-width: 1025px) {
   .swiper-button-prev {
@@ -1283,7 +1284,7 @@ dialog.js-show::backdrop {
   flex-direction: column;
   gap: 10px;
   left: 0;
-  bottom: 24px;
+  bottom: 20px;
 }
 .member__card__swiper-slide__description p {
   width: fit-content;
@@ -1297,7 +1298,7 @@ dialog.js-show::backdrop {
   letter-spacing: 1px;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 3px;
 }
 .member__card__swiper-slide__description span {
   font-size: 16px;
@@ -1307,8 +1308,8 @@ dialog.js-show::backdrop {
 .member__card__swiper-slide__number {
   position: absolute;
   width: 61px;
-  right: 8px;
-  top: -20px;
+  right: 1px;
+  top: -29px;
   z-index: 3;
 }
 
@@ -1329,13 +1330,13 @@ dialog.js-show::backdrop {
   position: absolute;
   left: 0;
   width: 95%; /* 元の幅指定 */
-  height: 4px; /* 元のプログレスバーの高さに合わせる（※数値は確認してください） */
-  background: #C4CCD7 !important; /* 軌道の色 */
+  height: 7px; /* 元のプログレスバーの高さに合わせる（※数値は確認してください） */
+  background: #c4ccd7 !important; /* 軌道の色 */
   border-radius: 0; /* 丸みを消す */
   opacity: 1 !important;
   /* 位置調整（元のCSSから移植） */
   top: auto !important;
-  bottom: -64px !important;
+  bottom: -76px !important;
 }
 @media screen and (min-width: 1025px) {
   .member__card__swiper-container .swiper-scrollbar {
@@ -1347,7 +1348,7 @@ dialog.js-show::backdrop {
 /* 動くバー（青い部分） */
 .member__card__swiper-container .swiper-scrollbar-drag {
   /* 元の .swiper-pagination-progressbar-fill のスタイルを移植 */
-  background: #0961B6 !important; /* 青色 */
+  background: #0961b6 !important; /* 青色 */
   border-radius: 0; /* 丸みを消す */
   /* スクロールバー特有の調整 */
   position: relative;
@@ -1355,14 +1356,15 @@ dialog.js-show::backdrop {
   height: 100%;
 }
 
-.swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled {
+.swiper-button-next.swiper-button-disabled,
+.swiper-button-prev.swiper-button-disabled {
   opacity: 1 !important;
 }
 
 .swiper-button-prev,
 .swiper-button-next {
   top: auto !important;
-  bottom: -170px;
+  bottom: -176px;
 }
 @media screen and (min-width: 1025px) {
   .swiper-button-prev,
@@ -1372,14 +1374,14 @@ dialog.js-show::backdrop {
 }
 
 .member__card__swiper-slide__img {
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   width: 100%;
   position: relative;
   box-shadow: 0 5px 15px rgba(26, 150, 239, 0.15);
 }
 
 .member__card__swiper-slide__lead {
-  padding: 12px 16px;
+  padding: 12px 13px;
   flex-grow: 1;
   background-color: #023e78;
   color: #fff;
@@ -1395,7 +1397,7 @@ dialog.js-show::backdrop {
 }
 
 .culture__inner {
-  padding: 80px 0;
+  padding: 80px 0 89px;
 }
 @media screen and (min-width: 1025px) {
   .culture__inner {
@@ -1421,7 +1423,8 @@ dialog.js-show::backdrop {
 }
 
 .culture__item {
-  padding: 28px 0;
+  padding: 28px 0px;
+  margin: 0 12px;
   border-bottom: 2px solid #c4ccd7;
   display: flex;
   flex-direction: column;
@@ -1469,7 +1472,7 @@ dialog.js-show::backdrop {
   font-size: 18px;
   font-weight: 700;
   line-height: 1.5;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
 @media screen and (min-width: 1025px) {
   .culture__lead__text p {
@@ -1508,7 +1511,7 @@ dialog.js-show::backdrop {
 
 /* 背景画像の見えている高さ */
 .parallax {
-  height: 488px;
+  height: 379px;
 }
 @media screen and (min-width: 1025px) {
   .parallax {
@@ -1549,7 +1552,7 @@ dialog.js-show::backdrop {
 }
 
 .benefits__inner {
-  padding: 80px 0;
+  padding: 84px 0;
 }
 @media screen and (min-width: 1025px) {
   .benefits__inner {
@@ -1624,7 +1627,7 @@ dialog.js-show::backdrop {
 
 .faq__inner {
   padding-top: 100px;
-  padding-bottom: 112px;
+  padding-bottom: 100px;
   display: flex;
   flex-direction: column;
 }
@@ -1645,7 +1648,7 @@ dialog.js-show::backdrop {
 }
 
 .faq__item {
-  padding: 8px 12px;
+  padding: 15px 9px;
   background-color: #f2f4f6;
   border-radius: 4px;
 }
@@ -1719,7 +1722,7 @@ dialog.js-show::backdrop {
   width: 100%;
   border-radius: 8px;
   background: linear-gradient(270deg, #0291d9 0%, #023e78 100%);
-  padding: 56px 8px;
+  padding: 56px 8px 71px;
 }
 @media screen and (min-width: 1025px) {
   .cta__content {
@@ -1801,7 +1804,7 @@ dialog.js-show::backdrop {
   font-style: normal;
   font-weight: 500;
   line-height: 1.7; /* 23.8px */
-  margin-bottom: 40px;
+  margin-bottom: 55px;
 }
 @media screen and (min-width: 1025px) {
   .cta__lead {
@@ -1872,7 +1875,7 @@ dialog.js-show::backdrop {
 
 .footer__inner {
   z-index: 1;
-  padding-top: 40px;
+  padding-top: 50px;
   padding-bottom: 92px;
   display: flex;
   flex-direction: column;
@@ -1923,7 +1926,7 @@ address {
 .footer__menu {
   display: flex;
   flex-direction: column;
-  padding: 16px;
+  padding: 16px 16px 47px;
 }
 @media screen and (min-width: 1025px) {
   .footer__menu {
@@ -1935,7 +1938,7 @@ address {
 .footer__menu__contents {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 13px;
 }
 @media screen and (min-width: 1025px) {
   .footer__menu__contents {
@@ -1961,7 +1964,7 @@ address {
   bottom: 0; /* 文字のすぐ下に配置 */
   width: 100%;
   height: 1px; /* 線の太さ */
-  background-color: #0961B6; /* 線の色（メインカラーに合わせて調整） */
+  background-color: #0961b6; /* 線の色（メインカラーに合わせて調整） */
   /* アニメーションの肝 */
   transform: scaleX(0); /* 最初は横幅0 */
   transform-origin: left; /* 左を基準にする */

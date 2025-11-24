@@ -80,15 +80,15 @@ $width-inner: 1240px;
 }
 .is-sp {
   @include mq(pc) {
-    display: none;
+    display: none !important;
   }
 }
 .is-pc {
   @include mq(sp) {
-    display: none;
+    display: none !important;
   }
   @include mq(tb) {
-    display: none;
+    display: none !important;
   }
 }
 body {
@@ -107,7 +107,7 @@ body {
   background: linear-gradient(270deg, #0a9ae5 0%, #023e78 100%);
 }
 .header__inner {
-  padding: 12px 16px;
+  padding: 18px 16px;
   display: flex;
   align-items: center;
 }
@@ -157,7 +157,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #023E78; /* 指定の濃い青 */
+    background-color: #023e78; /* 指定の濃い青 */
     z-index: -1; /* 文字の下に配置 */
     /* 左下(0% 100%)を中心とした円形で切り抜く */
     /* 最初は半径0%（見えない） */
@@ -177,7 +177,7 @@ body {
   font-style: normal;
   font-weight: 500;
   line-height: 1.4; /* 22.4px */
-  a{
+  a {
     position: relative; /* 下線の位置基準 */
     padding-bottom: 4px;
     &::after {
@@ -189,13 +189,13 @@ body {
       height: 1px; /* 下線の太さ */
       background-color: #fff;
       /* アニメーションの肝 */
-      transform: scaleX(0);         /* 最初は横幅0 */
-      transform-origin: center;     /* 中央を基準に拡大 */
+      transform: scaleX(0); /* 最初は横幅0 */
+      transform-origin: center; /* 中央を基準に拡大 */
       transition: transform 0.3s ease;
     }
 
     &:hover::after {
-      transform: scaleX(1);         /* ホバー時に100%まで拡大 */
+      transform: scaleX(1); /* ホバー時に100%まで拡大 */
     }
   }
 }
@@ -211,10 +211,10 @@ body {
 .drawer__icon {
   position: fixed;
   z-index: 102;
-  top: 20px;
-  right: 16px;
+  top: 29px;
+  right: 21px;
   width: 40px;
-  height: 15px;
+  height: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -224,7 +224,7 @@ body {
 }
 .drawer__icon--bar {
   width: 100%;
-  height: 1px;
+  height: 2px;
   background: #fff;
 }
 
@@ -337,7 +337,7 @@ body {
   position: relative;
   overflow: hidden;
 }
-.fv__wrapper{
+.fv__wrapper {
   position: relative;
   background: linear-gradient(270deg, #0a9ae5 0%, #023e78 100%);
   padding-top: 113px;
@@ -345,7 +345,7 @@ body {
 .fv__lead {
   position: absolute;
   left: 20px;
-  bottom: -40px;
+  bottom: -27px;
   z-index: 3;
   display: flex;
   flex-direction: column;
@@ -456,75 +456,57 @@ body {
 // main lead
 
 .main__lead {
+  background: linear-gradient(270deg, #0291d9 0%, #023e78 100%);
 
-background: linear-gradient(270deg, #0291d9 0%, #023e78 100%);
-
-position: relative;
-
+  position: relative;
 }
 
 .main__lead__bg {
+  position: absolute;
 
-position: absolute;
+  width: calc(287 / 390 * 100vw);
 
-width: calc(287 / 390 * 100vw);
+  bottom: 0;
 
-bottom: 0;
+  left: 0;
 
-left: 0;
-
-@include mq(pc) {
-
-width: 100%;
-
-}
-
+  @include mq(pc) {
+    width: 100%;
+  }
 }
 
 .main__lead__inner {
+  padding: 165px 0 131px;
 
-padding: 176px 0 131px;
+  display: flex;
 
-display: flex;
+  flex-direction: column;
 
-flex-direction: column;
+  gap: 64px;
 
-gap: 64px;
+  @include mq(pc) {
+    padding: 293px 0 118px;
 
-@include mq(pc) {
+    flex-direction: row;
 
-padding: 293px 0 118px;
+    gap: 140px;
 
-flex-direction: row;
-
-gap: 140px;
-
-margin-left: 100px;
-
+    margin-left: 100px;
+  }
 }
-
-}
-
-
 
 .main__lead__img {
+  width: 85%;
 
-width: 85%;
+  margin-left: auto;
 
-margin-left: auto;
+  img {
+    border-radius: 4px 0 0 4px;
+  }
 
-img {
-
-border-radius: 4px 0 0 4px;
-
-}
-
-@include mq(pc) {
-
-width: 44%;
-
-}
-
+  @include mq(pc) {
+    width: 44%;
+  }
 }
 .text-flow {
   width: fit-content;
@@ -533,7 +515,7 @@ width: 44%;
   flex-direction: column;
   /* gap: 48px;  <-- これだと行間が開きすぎるので変更 */
   gap: 10px; /* 行間はline-heightで制御するか、段落の間だけmarginを入れる */
-  
+
   @include mq(pc) {
     gap: 0;
   }
@@ -542,17 +524,17 @@ width: 44%;
 /* 段落の区切りを作るために、特定の行にだけマージンをつけるクラスを作ると便利 */
 /* 例: <p class="text-flow__line mb-large"> */
 .text-flow__line.mb-large {
-    margin-bottom: 48px;
+  margin-bottom: 48px;
 }
 
 .text-flow__line {
   position: relative;
   display: inline-block; /* width: fit-content的に振る舞わせる */
-  width: fit-content;    /* これがないと右端までカバーが伸びてしまうことがある */
-  
+  width: fit-content; /* これがないと右端までカバーが伸びてしまうことがある */
+
   /* ▼▼▼ 行間調整 ▼▼▼ */
-  margin-bottom: 0;      /* 必要に応じて調整 */
-  
+  margin-bottom: 0; /* 必要に応じて調整 */
+
   text-shadow: 0 0 64px rgba(0, 0, 0, 0.25);
   font-size: 15px;
   font-style: normal;
@@ -582,12 +564,12 @@ width: 44%;
   left: 0;
   z-index: 2;
   color: $text-sub; /* 白文字 */
-  
+
   /* ▼▼▼ アニメーション設定 ▼▼▼ */
   /* 1行あたりの所要時間を 1.5s に固定する例 */
   /* cubic-bezierだと「シュッ、シュッ」という動き、linearだと「スーッ」と一定の動き */
   animation: text-flow 1.5s cubic-bezier(0.19, 1, 0.22, 1) var(--delay) both;
-  
+
   /* もし文章の長さに応じてスピードを変えたい場合は、
      HTML側で style="--delay: 1s; animation-duration: 2s;" のように個別に上書きする */
 }
@@ -596,7 +578,7 @@ width: 44%;
   display: block;
   position: relative;
   color: $text-dark; /* 暗い文字 */
-  
+
   /* 下の文字は見えなくして、スペース確保用にするなら opacity: 0 でも良いが、
      今回は「暗い文字→明るい文字」への変化なので、このままでOK */
 }
@@ -606,7 +588,7 @@ width: 44%;
 }
 
 .business__inner {
-  padding: 33px 0 51px 20px;
+  padding: 38px 0 51px 20px;
   @include mq(pc) {
     padding: 0 0 0 100px;
   }
@@ -614,7 +596,7 @@ width: 44%;
 
 .business__category {
   @include mq(sp) {
-    gap: 16px 8px;
+    gap: 11px 8px;
     margin-bottom: 40px;
     margin-right: 24px;
     flex-wrap: wrap;
@@ -715,6 +697,7 @@ width: 44%;
   font-style: normal;
   font-weight: 700;
   line-height: 1.6; /* 28.8px */
+  margin-bottom: 12px;
   span {
     font-size: 20px;
     font-style: italic;
@@ -770,7 +753,7 @@ width: 44%;
   background-color: $bg-03;
   border-radius: 4px;
   overflow: hidden;
-  border: 1px solid transparent; 
+  border: 1px solid transparent;
   transition: color 0.3s, border-color 0.3s;
   z-index: 1;
   &::before {
@@ -782,7 +765,7 @@ width: 44%;
     height: 100%;
     background-color: #ffffff; // ホバー時の背景色
     z-index: -1;
-    
+
     // アニメーション：左下を中心とした円形オープン
     clip-path: circle(0% at 0% 100%);
     transition: clip-path 0.4s ease-out;
@@ -799,8 +782,8 @@ width: 44%;
     transform: translateY(-50%);
   }
   &:hover {
-    color: #023E78;        // 文字色変更
-    border-color: #023E78; // ボーダー色変更
+    color: #023e78; // 文字色変更
+    border-color: #023e78; // ボーダー色変更
 
     // 背景を広げる
     &::before {
@@ -858,7 +841,7 @@ width: 44%;
   }
   @include mq(pc) {
     font-size: 28px;
-    span{
+    span {
       font-size: 30px;
     }
   }
@@ -892,14 +875,14 @@ width: 44%;
   }
   @include mq(pc) {
     margin-bottom: 40px;
-    dl{
+    dl {
       display: flex;
     }
-    dt{
+    dt {
       width: calc(378 / 1440 * 100vw);
       font-size: 18px;
     }
-    dd{
+    dd {
       font-size: 16px;
     }
   }
@@ -1039,7 +1022,7 @@ dialog {
 }
 
 .challenge__inner {
-  padding-top: 120px;
+  padding-top: 74px;
   padding-bottom: 80px;
   @include mq(pc) {
     padding-top: 222px;
@@ -1050,7 +1033,7 @@ dialog {
 .challenge__items {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 24px;
+  gap: 26px;
   position: relative;
   z-index: 1;
   @include mq(pc) {
@@ -1072,16 +1055,16 @@ dialog {
   border-radius: 4px;
   background: rgba(244, 251, 255, 0.7);
   &.--01 {
-    border-bottom: 12px solid #37a4db;
+    border-bottom: 14px solid #37a4db;
   }
   &.--02 {
-    border-bottom: 12px solid #2766ae;
+    border-bottom: 14px solid #2766ae;
   }
   &.--03 {
-    border-bottom: 12px solid #025178;
+    border-bottom: 14px solid #025178;
   }
   &.--04 {
-    border-bottom: 12px solid #023e78;
+    border-bottom: 14px solid #023e78;
   }
   @include mq(pc) {
     width: calc(582 / 1440 * 100vw);
@@ -1218,7 +1201,7 @@ dialog {
 }
 
 .swiper-button-prev {
-  right: 100px;
+  right: 86px;
   @include mq(pc) {
     right: calc(220 / 1440 * 100vw);
   }
@@ -1314,7 +1297,7 @@ dialog {
   flex-direction: column;
   gap: 10px;
   left: 0;
-  bottom: 24px;
+  bottom: 20px;
   p {
     width: fit-content;
     padding: 4px 16px;
@@ -1327,7 +1310,7 @@ dialog {
     letter-spacing: 1px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 3px;
   }
   span {
     font-size: 16px;
@@ -1337,8 +1320,8 @@ dialog {
 .member__card__swiper-slide__number {
   position: absolute;
   width: 61px;
-  right: 8px;
-  top: -20px;
+  right: 1px;
+  top: -29px;
   z-index: 3;
 }
 .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
@@ -1357,54 +1340,54 @@ dialog {
   position: absolute;
   left: 0;
   width: 95%; /* 元の幅指定 */
-  height: 4px; /* 元のプログレスバーの高さに合わせる（※数値は確認してください） */
-  background: #C4CCD7 !important; /* 軌道の色 */
+  height: 7px; /* 元のプログレスバーの高さに合わせる（※数値は確認してください） */
+  background: #c4ccd7 !important; /* 軌道の色 */
   border-radius: 0; /* 丸みを消す */
   opacity: 1 !important;
-  
+
   /* 位置調整（元のCSSから移植） */
   top: auto !important;
-  bottom: -64px !important;
-  
+  bottom: -76px !important;
+
   @include mq(pc) {
     width: calc(976 / 1440 * 100vw);
-    bottom: calc(-103 /1440 *100vw) !important;
+    bottom: calc(-103 / 1440 * 100vw) !important;
   }
 }
 
 /* 動くバー（青い部分） */
 .member__card__swiper-container .swiper-scrollbar-drag {
   /* 元の .swiper-pagination-progressbar-fill のスタイルを移植 */
-  background: #0961B6 !important; /* 青色 */
+  background: #0961b6 !important; /* 青色 */
   border-radius: 0; /* 丸みを消す */
-  
+
   /* スクロールバー特有の調整 */
   position: relative;
   top: 0;
   height: 100%;
 }
-.swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled{
+.swiper-button-next.swiper-button-disabled,
+.swiper-button-prev.swiper-button-disabled {
   opacity: 1 !important;
-
 }
 .swiper-button-prev,
 .swiper-button-next {
   top: auto !important;
-  bottom: -170px;
+  bottom: -176px;
   @include mq(pc) {
     bottom: calc(-170 / 1440 * 100vw);
   }
 }
 
 .member__card__swiper-slide__img {
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   width: 100%;
   position: relative;
   box-shadow: 0 5px 15px rgba(26, 150, 239, 0.15);
 }
 
 .member__card__swiper-slide__lead {
-  padding: 12px 16px;
+  padding: 12px 13px;
   flex-grow: 1;
   background-color: $bg-03;
   color: $text-sub;
@@ -1433,7 +1416,7 @@ dialog {
 }
 
 .culture__inner {
-  padding: 80px 0;
+  padding: 80px 0 89px;
   @include mq(pc) {
     padding: 120px 0;
     max-width: $width-inner;
@@ -1455,7 +1438,8 @@ dialog {
 }
 
 .culture__item {
-  padding: 28px 0;
+  padding: 28px 0px;
+  margin: 0 12px;
   border-bottom: 2px solid #c4ccd7;
   display: flex;
   flex-direction: column;
@@ -1496,7 +1480,7 @@ dialog {
     font-size: 18px;
     font-weight: 700;
     line-height: 1.5;
-    margin-bottom: 4px;
+    margin-bottom: 2px;
     @include mq(pc) {
       font-size: 24px;
       line-height: 1.6;
@@ -1529,7 +1513,7 @@ dialog {
 }
 /* 背景画像の見えている高さ */
 .parallax {
-  height: 488px;
+  height: 379px;
   @include mq(pc) {
     height: 380px;
   }
@@ -1565,7 +1549,7 @@ dialog {
   }
 }
 .benefits__inner {
-  padding: 80px 0;
+  padding: 84px 0;
   @include mq(pc) {
     padding: 120px 0;
   }
@@ -1627,7 +1611,7 @@ dialog {
 
 .faq__inner {
   padding-top: 100px;
-  padding-bottom: 112px;
+  padding-bottom: 100px;
   display: flex;
   flex-direction: column;
   @include mq(pc) {
@@ -1646,7 +1630,7 @@ dialog {
 }
 
 .faq__item {
-  padding: 8px 12px;
+  padding: 15px 9px;
   background-color: $bg-01;
   border-radius: 4px;
   dl {
@@ -1719,7 +1703,7 @@ dialog {
   width: 100%;
   border-radius: 8px;
   background: linear-gradient(270deg, #0291d9 0%, #023e78 100%);
-  padding: 56px 8px;
+  padding: 56px 8px 71px;
   @include mq(pc) {
     position: relative;
     height: calc(636 / 1440 * 100vw);
@@ -1794,7 +1778,7 @@ dialog {
   font-style: normal;
   font-weight: 500;
   line-height: 1.7; /* 23.8px */
-  margin-bottom: 40px;
+  margin-bottom: 55px;
   @include mq(pc) {
     font-size: 16px;
   }
@@ -1859,7 +1843,7 @@ dialog {
 
 .footer__inner {
   z-index: 1;
-  padding-top: 40px;
+  padding-top: 50px;
   padding-bottom: 92px;
   display: flex;
   flex-direction: column;
@@ -1885,7 +1869,7 @@ dialog {
   @include mq(pc) {
     margin-bottom: 40px;
   }
-  &:hover{
+  &:hover {
     opacity: 0.7;
   }
 }
@@ -1906,7 +1890,7 @@ address {
 .footer__menu {
   display: flex;
   flex-direction: column;
-  padding: 16px;
+  padding: 16px 16px 47px;
   @include mq(pc) {
     flex-direction: row;
     gap: 20px;
@@ -1915,7 +1899,7 @@ address {
 .footer__menu__contents {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 13px;
   @include mq(pc) {
     gap: 0;
     width: 250px;
@@ -1930,24 +1914,24 @@ address {
   line-height: 1.4; /* 25.2px */
   position: relative;
   /* 下線の設定 */
-    &::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: 0; /* 文字のすぐ下に配置 */
-      width: 100%;
-      height: 1px; /* 線の太さ */
-      background-color: #0961B6; /* 線の色（メインカラーに合わせて調整） */
-      /* アニメーションの肝 */
-      transform: scaleX(0);      /* 最初は横幅0 */
-      transform-origin: left;    /* 左を基準にする */
-      transition: transform 0.3s ease;
-    }
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0; /* 文字のすぐ下に配置 */
+    width: 100%;
+    height: 1px; /* 線の太さ */
+    background-color: #0961b6; /* 線の色（メインカラーに合わせて調整） */
+    /* アニメーションの肝 */
+    transform: scaleX(0); /* 最初は横幅0 */
+    transform-origin: left; /* 左を基準にする */
+    transition: transform 0.3s ease;
+  }
 
-    /* ホバー時の挙動 */
-    &:hover::after {
-      transform: scaleX(1);      /* 幅を100%にする */
-    }
+  /* ホバー時の挙動 */
+  &:hover::after {
+    transform: scaleX(1); /* 幅を100%にする */
+  }
 }
 
 .footer__sns {
@@ -1957,7 +1941,7 @@ address {
 
 .footer__sns__item {
   width: 40px;
-  &:hover{
+  &:hover {
     opacity: 0.7;
   }
 }
