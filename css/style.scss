@@ -292,6 +292,7 @@ body {
 .fv {
   background: linear-gradient(270deg, #0a9ae5 0%, #023e78 100%);
   position: relative;
+  overflow: hidden;
 }
 .fv__lead {
   position: absolute;
