@@ -143,6 +143,11 @@ body {
   position: relative;
   overflow: hidden; /* はみ出した背景を隠すために必須 */
   z-index: 1;
+  background-image: linear-gradient(45deg, #023e78 50%, transparent 50%);
+  background-position: 100%;
+  background-size: 300%;
+  color: white;
+  transition: background 500ms ease-in-out;
   &::after {
     position: absolute;
     content: '';
@@ -154,23 +159,8 @@ body {
     top: 50%;
     transform: translateY(-50%);
   }
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #023e78; /* 指定の濃い青 */
-    z-index: -1; /* 文字の下に配置 */
-    /* 左下(0% 100%)を中心とした円形で切り抜く */
-    /* 最初は半径0%（見えない） */
-    clip-path: circle(0% at 0% 100%);
-    transition: clip-path 0.4s ease-out;
-  }
-  &:hover::before {
-    /* 半径を大きくしてボタン全体を覆う（斜めに広がって見える） */
-    clip-path: circle(150% at 0% 100%);
+  &:hover {
+    background-position: 0;
   }
 }
 .header__list {
@@ -735,7 +725,7 @@ body {
   @include mq(pc) {
     font-size: 24px;
     margin-bottom: 24px;
-    span{
+    span {
       font-size: 28px;
       letter-spacing: 0.84px;
     }
@@ -778,10 +768,10 @@ body {
   }
   @include mq(pc) {
     margin-bottom: 32px;
-    dt{
+    dt {
       font-size: 18px;
     }
-    dd{
+    dd {
       font-size: 16px;
     }
   }
@@ -801,24 +791,15 @@ body {
   border-radius: 4px;
   overflow: hidden;
   border: 1px solid transparent;
-  transition: color 0.3s, border-color 0.3s;
   z-index: 1;
+  background-image: linear-gradient(45deg, #fff 50%, transparent 50%);
+  background-position: 100%;
+  background-size: 300%;
+  color: white;
+  transition: background 500ms ease-in-out, color 500ms ease-in-out, border-color 500ms ease-in-out;
+
   @include mq(pc) {
     padding: 20px 40px;
-  }
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #ffffff; // ホバー時の背景色
-    z-index: -1;
-
-    // アニメーション：左下を中心とした円形オープン
-    clip-path: circle(0% at 0% 100%);
-    transition: clip-path 0.4s ease-out;
   }
   &::after {
     position: absolute;
@@ -834,11 +815,8 @@ body {
   &:hover {
     color: #023e78; // 文字色変更
     border-color: #023e78; // ボーダー色変更
+    background-position: 0;
 
-    // 背景を広げる
-    &::before {
-      clip-path: circle(150% at 0% 100%);
-    }
 
     // [修正] アイコン画像をホバー用に切り替える
     &::after {
@@ -1267,7 +1245,7 @@ dialog {
     svg {
       /* 1. 外側の円 (rect) */
       rect {
-        fill: #023E78 !important;   /* 背景を青に塗りつぶす */
+        fill: #023e78 !important; /* 背景を青に塗りつぶす */
         stroke: #fff !important; /* 枠線を白にする */
       }
 
@@ -1467,7 +1445,7 @@ dialog {
   width: 100%;
   position: relative;
   box-shadow: 0 5px 15px rgba(26, 150, 239, 0.15);
-  img{
+  img {
     width: 100%;
   }
 }
@@ -1780,20 +1758,20 @@ dialog {
   }
   @include mq(pc) {
     padding: 23px 8px 20px;
-    dt{
+    dt {
       padding-bottom: 16px;
       gap: 23px;
       padding: 0 44px 13px;
-      span{
+      span {
         width: 36px;
         font-size: 28px;
         line-height: 1.4;
       }
-      p{
+      p {
         font-size: 20px;
       }
     }
-    dd{
+    dd {
       font-size: 16px;
       padding: 16px 48px 0;
     }

@@ -134,6 +134,11 @@ body {
   position: relative;
   overflow: hidden; /* はみ出した背景を隠すために必須 */
   z-index: 1;
+  background-image: linear-gradient(45deg, #023e78 50%, transparent 50%);
+  background-position: 100%;
+  background-size: 300%;
+  color: white;
+  transition: background 500ms ease-in-out;
 }
 .header__btn::after {
   position: absolute;
@@ -146,23 +151,8 @@ body {
   top: 50%;
   transform: translateY(-50%);
 }
-.header__btn::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #023e78; /* 指定の濃い青 */
-  z-index: -1; /* 文字の下に配置 */
-  /* 左下(0% 100%)を中心とした円形で切り抜く */
-  /* 最初は半径0%（見えない） */
-  clip-path: circle(0% at 0% 100%);
-  transition: clip-path 0.4s ease-out;
-}
-.header__btn:hover::before {
-  /* 半径を大きくしてボタン全体を覆う（斜めに広がって見える） */
-  clip-path: circle(150% at 0% 100%);
+.header__btn:hover {
+  background-position: 0;
 }
 
 .header__list {
@@ -817,25 +807,17 @@ body {
   border-radius: 4px;
   overflow: hidden;
   border: 1px solid transparent;
-  transition: color 0.3s, border-color 0.3s;
   z-index: 1;
+  background-image: linear-gradient(45deg, #fff 50%, transparent 50%);
+  background-position: 100%;
+  background-size: 300%;
+  color: white;
+  transition: background 500ms ease-in-out, color 500ms ease-in-out, border-color 500ms ease-in-out;
 }
 @media screen and (min-width: 1025px) {
   .modal__open-btn {
     padding: 20px 40px;
   }
-}
-.modal__open-btn::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #ffffff;
-  z-index: -1;
-  clip-path: circle(0% at 0% 100%);
-  transition: clip-path 0.4s ease-out;
 }
 .modal__open-btn::after {
   position: absolute;
@@ -850,9 +832,7 @@ body {
 .modal__open-btn:hover {
   color: #023e78;
   border-color: #023e78;
-}
-.modal__open-btn:hover::before {
-  clip-path: circle(150% at 0% 100%);
+  background-position: 0;
 }
 .modal__open-btn:hover::after {
   background-image: url(/img/modal-hover-btn.svg);
@@ -1295,7 +1275,7 @@ dialog.js-show::backdrop {
 }
 .swiper-button-prev:hover svg rect,
 .swiper-button-next:hover svg rect {
-  fill: #023E78 !important; /* 背景を青に塗りつぶす */
+  fill: #023e78 !important; /* 背景を青に塗りつぶす */
   stroke: #fff !important; /* 枠線を白にする */
 }
 .swiper-button-prev:hover svg path,
