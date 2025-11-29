@@ -330,7 +330,18 @@ body {
 .fv {
   position: relative;
   overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: transform 1s cubic-bezier(0.25, 1, 0.5, 1),
+    opacity 1s cubic-bezier(0.25, 1, 0.5, 1);
+  transition-delay: 0.2s;
 }
+
+.fv.is-show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .fv__wrapper {
   position: relative;
   background: linear-gradient(270deg, #0a9ae5 0%, #023e78 100%);
@@ -347,6 +358,12 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  transform: translateY(20px);
+  transition: transform 1s cubic-bezier(0.25, 1, 0.5, 1),
+    opacity 1s cubic-bezier(0.25, 1, 0.5, 1);
+  transition-delay: 0.2s;
+  overflow: hidden;
+  opacity: 0;
   @include mq(pc) {
     gap: 20px;
     left: 40px;
@@ -374,6 +391,10 @@ body {
       letter-spacing: 1.28px;
     }
   }
+}
+.fv__lead.is-show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .images-scroll {
@@ -506,85 +527,63 @@ body {
   @include mq(pc) {
     width: 48%;
   }
+} // 行全体の設定
+.text-flow__line {
+  font-size: 15px;
+  line-height: 2.2;
+  font-weight: 500;
 }
-.text-flow {
-  width: fit-content;
-  padding: 0 24px;
+.text-flow-wrapper {
   display: flex;
   flex-direction: column;
-  /* gap: 48px;  <-- これだと行間が開きすぎるので変更 */
-  gap: 10px; /* 行間はline-heightで制御するか、段落の間だけmarginを入れる */
-
+  gap: 48px;
+  @include mq(sp) {
+    padding-inline: calc(24 / 375 * 100vw);
+  }
+  @include mq(tb) {
+    padding-inline: calc(24 / 375 * 100vw);
+  }
   @include mq(pc) {
-    padding: 0;
+    gap: 80px;
   }
 }
-
-/* 段落の区切りを作るために、特定の行にだけマージンをつけるクラスを作ると便利 */
-/* 例: <p class="text-flow__line mb-large"> */
-.text-flow__line.mb-large {
-  margin-bottom: 48px;
-}
-.space-01 {
-  @include mq(pc) {
-    height: 63px !important;
-  }
-}
-
-.text-flow__line {
+// 【重要】1文字ごとの箱
+// これが inline-block なので文字が横に並びます
+.char-wrapper {
+  display: inline-block;
   position: relative;
-  display: inline-block; /* width: fit-content的に振る舞わせる */
-  width: fit-content; /* これがないと右端までカバーが伸びてしまうことがある */
-
-  /* ▼▼▼ 行間調整 ▼▼▼ */
-  margin-bottom: 0; /* 必要に応じて調整 */
-
-  text-shadow: 0 0 64px rgba(0, 0, 0, 0.25);
-  font-size: 15px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 1.8; /* バラバラにしたので少し詰めてもいいかも */
-  @include mq(pc) {
-    font-size: 18px;
-  }
+  white-space: pre; // 空白文字がつぶれないようにする
 }
 
-@keyframes text-flow {
-  from {
-    clip-path: inset(0 100% 0 0);
-  }
-  to {
-    clip-path: inset(0 0 0 0);
-  }
+// 土台の文字（色は変更前：例 黒など）
+.text-flow__base {
+  display: block; // wrapperの中で表示させる
+  color: $text-dark; // ★変更前の色（暗い色など）
+  // Baseが高さと幅を確保するのでposition:absoluteはしない
 }
 
+// 上に被さる文字（色は変更後：例 青など）
 .text-flow__cover {
-  /* delayはHTML側のstyle属性で指定 */
-  --delay: 0s;
-
-  display: block;
+  // アニメーション以外の設定（位置や色など）はそのまま
   position: absolute;
   top: 0;
   left: 0;
   z-index: 2;
-  color: $text-sub; /* 白文字 */
+  color: $text-sub;
 
-  /* ▼▼▼ アニメーション設定 ▼▼▼ */
-  /* 1行あたりの所要時間を 1.5s に固定する例 */
-  /* cubic-bezierだと「シュッ、シュッ」という動き、linearだと「スーッ」と一定の動き */
-  animation: text-flow 1.5s cubic-bezier(0.19, 1, 0.22, 1) var(--delay) both;
+  // 初期状態は clip-path で隠しておく
+  clip-path: inset(0 100% 0 0);
 
-  /* もし文章の長さに応じてスピードを変えたい場合は、
-     HTML側で style="--delay: 1s; animation-duration: 2s;" のように個別に上書きする */
+  // ★ここでは animation を指定しない！
+}
+.is-inview .text-flow__cover {
+  animation: text-flow 0.8s cubic-bezier(0.19, 1, 0.22, 1) var(--delay) both;
 }
 
-.text-flow__base {
-  display: block;
-  position: relative;
-  color: $text-dark; /* 暗い文字 */
-
-  /* 下の文字は見えなくして、スペース確保用にするなら opacity: 0 でも良いが、
-     今回は「暗い文字→明るい文字」への変化なので、このままでOK */
+@keyframes text-flow {
+  to {
+    clip-path: inset(0 0 0 0); // 文字が見えるように開く
+  }
 }
 // business
 .business {
@@ -796,7 +795,8 @@ body {
   background-position: 100%;
   background-size: 300%;
   color: white;
-  transition: background 500ms ease-in-out, color 500ms ease-in-out, border-color 500ms ease-in-out;
+  transition: background 500ms ease-in-out, color 500ms ease-in-out,
+    border-color 500ms ease-in-out;
 
   @include mq(pc) {
     padding: 20px 40px;
@@ -816,7 +816,6 @@ body {
     color: #023e78; // 文字色変更
     border-color: #023e78; // ボーダー色変更
     background-position: 0;
-
 
     // [修正] アイコン画像をホバー用に切り替える
     &::after {
@@ -1482,11 +1481,9 @@ dialog {
 .culture__inner {
   padding: 80px 0 89px;
   @include mq(pc) {
-    padding: 120px 0;
+    padding-top: 120px;
+    padding-bottom: 120px;
     max-width: $width-inner;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
   }
 }
 
@@ -1853,11 +1850,14 @@ dialog {
   letter-spacing: 1.6px;
   text-transform: uppercase;
   margin-bottom: 24px;
-  @include mq(pc) {
+  @media (min-width: 1141px) {
     font-size: 56px;
     letter-spacing: 1.68px;
     text-transform: uppercase;
     margin-bottom: 20px;
+  }
+  @media (min-width: 1024px) and (max-width: 1140px) {
+    font-size: 46px;
   }
 }
 
@@ -1870,6 +1870,12 @@ dialog {
   margin-bottom: 55px;
   @include mq(pc) {
     font-size: 16px;
+  }
+  @media (min-width: 1141px) {
+    font-size: 16px;
+  }
+  @media (min-width: 1024px) and (max-width: 1140px) {
+    font-size: 14px;
   }
 }
 
