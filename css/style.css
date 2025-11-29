@@ -1520,11 +1520,9 @@ dialog.js-show::backdrop {
 }
 @media screen and (min-width: 1025px) {
   .culture__inner {
-    padding: 120px 0;
+    padding-top: 120px;
+    padding-bottom: 120px;
     max-width: 1240px;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
   }
 }
 
