@@ -300,3 +300,61 @@ $(function () {
   // スクロールやリサイズ時にもチェック
   $(window).on('scroll resize', checkInView);
 });
+
+
+// 文字色変更 lead
+$(function(){
+  // --- 1. 文字の加工処理 (前回と同じ) ---
+  var delaySpeed = 0.05;
+  var totalCount = 0;
+
+  $('.text-flow__line').each(function(){
+    var $line = $(this);
+    var text = $line.text().trim();
+    $line.empty();
+
+    $.each(text.split(''), function(i, char){
+      var $wrapper = $('<span>').addClass('char-wrapper');
+      var $base = $('<span>').addClass('text-flow__base').text(char);
+      var $cover = $('<span>')
+        .addClass('text-flow__cover')
+        .text(char);
+
+      var currentDelay = totalCount * delaySpeed;
+      $cover.css('--delay', currentDelay + 's');
+
+      $wrapper.append($base).append($cover);
+      $line.append($wrapper);
+      totalCount++; 
+    });
+  });
+
+  // --- 2. 監視処理 (ここを追加) ---
+  
+  // 監視する設定（画面の20%くらい見えたら発火）
+  var options = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.2 
+  };
+
+  // 監視員さんを作成
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        // 画面に入ったらクラスをつける
+        $(entry.target).addClass('is-inview');
+        
+        // 一度発火したら監視をやめる（何度も再生させない場合）
+        observer.unobserve(entry.target);
+      }
+    });
+  }, options);
+
+  // 監視対象を指定（ラッパー全体を監視対象にする）
+  // もし段落ごとにバラバラに発火させたい場合は '.text-flow' に変えてください
+  $('.text-flow-wrapper').each(function() {
+    observer.observe(this);
+  });
+  
+});

@@ -520,59 +520,60 @@ body {
   }
 }
 
-.text-flow {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  padding: 0 24px;
+.text-flow__line {
+  font-size: 15px;
+  line-height: 2.2;
+  font-weight: 500;
+}
+
+.text-flow-wrapper {
   display: flex;
   flex-direction: column;
-  /* gap: 48px;  <-- これだと行間が開きすぎるので変更 */
-  gap: 10px; /* 行間はline-heightで制御するか、段落の間だけmarginを入れる */
+  gap: 48px;
+}
+@media screen and (max-width: 767px) {
+  .text-flow-wrapper {
+    padding-inline: 6.4vw;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .text-flow-wrapper {
+    padding-inline: 6.4vw;
+  }
 }
 @media screen and (min-width: 1025px) {
-  .text-flow {
-    padding: 0;
+  .text-flow-wrapper {
+    gap: 80px;
   }
 }
 
-/* 段落の区切りを作るために、特定の行にだけマージンをつけるクラスを作ると便利 */
-/* 例: <p class="text-flow__line mb-large"> */
-.text-flow__line.mb-large {
-  margin-bottom: 48px;
-}
-
-@media screen and (min-width: 1025px) {
-  .space-01 {
-    height: 63px !important;
-  }
-}
-
-.text-flow__line {
+.char-wrapper {
+  display: inline-block;
   position: relative;
-  display: inline-block; /* width: fit-content的に振る舞わせる */
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content; /* これがないと右端までカバーが伸びてしまうことがある */
-  /* ▼▼▼ 行間調整 ▼▼▼ */
-  margin-bottom: 0; /* 必要に応じて調整 */
-  text-shadow: 0 0 64px rgba(0, 0, 0, 0.25);
-  font-size: 15px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 1.8; /* バラバラにしたので少し詰めてもいいかも */
+  white-space: pre;
 }
-@media screen and (min-width: 1025px) {
-  .text-flow__line {
-    font-size: 18px;
-  }
+
+.text-flow__base {
+  display: block;
+  color: #023e78;
+}
+
+.text-flow__cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  color: #fff;
+  -webkit-clip-path: inset(0 100% 0 0);
+          clip-path: inset(0 100% 0 0);
+}
+
+.is-inview .text-flow__cover {
+  -webkit-animation: text-flow 0.8s cubic-bezier(0.19, 1, 0.22, 1) var(--delay) both;
+          animation: text-flow 0.8s cubic-bezier(0.19, 1, 0.22, 1) var(--delay) both;
 }
 
 @-webkit-keyframes text-flow {
-  from {
-    -webkit-clip-path: inset(0 100% 0 0);
-            clip-path: inset(0 100% 0 0);
-  }
   to {
     -webkit-clip-path: inset(0 0 0 0);
             clip-path: inset(0 0 0 0);
@@ -580,41 +581,11 @@ body {
 }
 
 @keyframes text-flow {
-  from {
-    -webkit-clip-path: inset(0 100% 0 0);
-            clip-path: inset(0 100% 0 0);
-  }
   to {
     -webkit-clip-path: inset(0 0 0 0);
             clip-path: inset(0 0 0 0);
   }
 }
-.text-flow__cover {
-  /* delayはHTML側のstyle属性で指定 */
-  --delay: 0s;
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 2;
-  color: #fff; /* 白文字 */
-  /* ▼▼▼ アニメーション設定 ▼▼▼ */
-  /* 1行あたりの所要時間を 1.5s に固定する例 */
-  /* cubic-bezierだと「シュッ、シュッ」という動き、linearだと「スーッ」と一定の動き */
-  -webkit-animation: text-flow 1.5s cubic-bezier(0.19, 1, 0.22, 1) var(--delay) both;
-          animation: text-flow 1.5s cubic-bezier(0.19, 1, 0.22, 1) var(--delay) both;
-  /* もし文章の長さに応じてスピードを変えたい場合は、
-     HTML側で style="--delay: 1s; animation-duration: 2s;" のように個別に上書きする */
-}
-
-.text-flow__base {
-  display: block;
-  position: relative;
-  color: #023e78; /* 暗い文字 */
-  /* 下の文字は見えなくして、スペース確保用にするなら opacity: 0 でも良いが、
-     今回は「暗い文字→明るい文字」への変化なので、このままでOK */
-}
-
 .business {
   background: linear-gradient(270deg, #0291d9 0%, #023e78 100%);
 }
