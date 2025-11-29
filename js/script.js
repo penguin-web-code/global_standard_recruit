@@ -358,3 +358,17 @@ $(function(){
   });
   
 });
+
+// fvおくらせる
+$(function() {
+  setTimeout(function() {
+    $('.fv').addClass('is-show');
+  }, 300); // ← 0.3秒遅れて表示
+});
+
+// fv__leadおくらせる
+$(function() {
+  setTimeout(function() {
+    $('.fv__lead').addClass('is-show');
+  }, 400); // ← 0.4秒遅れて表示
+});

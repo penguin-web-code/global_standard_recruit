@@ -330,7 +330,18 @@ body {
 .fv {
   position: relative;
   overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: transform 1s cubic-bezier(0.25, 1, 0.5, 1),
+    opacity 1s cubic-bezier(0.25, 1, 0.5, 1);
+  transition-delay: 0.2s;
 }
+
+.fv.is-show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .fv__wrapper {
   position: relative;
   background: linear-gradient(270deg, #0a9ae5 0%, #023e78 100%);
@@ -347,6 +358,12 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  transform: translateY(20px);
+  transition: transform 1s cubic-bezier(0.25, 1, 0.5, 1),
+    opacity 1s cubic-bezier(0.25, 1, 0.5, 1);
+  transition-delay: 0.2s;
+  overflow: hidden;
+  opacity: 0;
   @include mq(pc) {
     gap: 20px;
     left: 40px;
@@ -374,6 +391,10 @@ body {
       letter-spacing: 1.28px;
     }
   }
+}
+.fv__lead.is-show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .images-scroll {
@@ -506,13 +527,13 @@ body {
   @include mq(pc) {
     width: 48%;
   }
-}// 行全体の設定
+} // 行全体の設定
 .text-flow__line {
   font-size: 15px;
   line-height: 2.2;
   font-weight: 500;
 }
-.text-flow-wrapper{
+.text-flow-wrapper {
   display: flex;
   flex-direction: column;
   gap: 48px;
@@ -549,10 +570,10 @@ body {
   left: 0;
   z-index: 2;
   color: $text-sub;
-  
+
   // 初期状態は clip-path で隠しておく
   clip-path: inset(0 100% 0 0);
-  
+
   // ★ここでは animation を指定しない！
 }
 .is-inview .text-flow__cover {
@@ -1829,11 +1850,14 @@ dialog {
   letter-spacing: 1.6px;
   text-transform: uppercase;
   margin-bottom: 24px;
-  @include mq(pc) {
+  @media (min-width: 1141px) {
     font-size: 56px;
     letter-spacing: 1.68px;
     text-transform: uppercase;
     margin-bottom: 20px;
+  }
+  @media (min-width: 1024px) and (max-width: 1140px) {
+    font-size: 46px;
   }
 }
 
@@ -1846,6 +1870,12 @@ dialog {
   margin-bottom: 55px;
   @include mq(pc) {
     font-size: 16px;
+  }
+  @media (min-width: 1141px) {
+    font-size: 16px;
+  }
+  @media (min-width: 1024px) and (max-width: 1140px) {
+    font-size: 14px;
   }
 }
 
