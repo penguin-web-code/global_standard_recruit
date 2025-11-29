@@ -271,3 +271,32 @@ function updateActiveCategory(index) {
     categoryItems[index].classList.add('--active');
   }
 }
+
+// 表示領域にはいったら扉が開く
+$(function () {
+  const $target = $('.js-cta');
+
+  function checkInView() {
+    const windowTop = $(window).scrollTop();
+    const windowBottom = windowTop + $(window).height();
+
+    const targetTop = $target.offset().top;
+    const targetBottom = targetTop + $target.outerHeight();
+
+    // 30% くらい見えたら開く
+    const visibleHeight = targetBottom - windowTop;
+    const threshold = $target.outerHeight() * 0.3;
+
+    if (visibleHeight > threshold && windowBottom > targetTop) {
+      $target.addClass('active');
+    } else {
+      $target.removeClass('active');
+    }
+  }
+
+  // 初回チェック
+  checkInView();
+
+  // スクロールやリサイズ時にもチェック
+  $(window).on('scroll resize', checkInView);
+});

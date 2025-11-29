@@ -21,6 +21,8 @@
   }
 }
 .section__title p {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   font-size: 32px;
   font-style: italic;
@@ -241,6 +243,8 @@ body {
 
 .drawer__body {
   width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
   padding: 92px 20px 28px;
   position: relative;
@@ -355,7 +359,8 @@ body {
 }
 .fv__lead p {
   background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+          backdrop-filter: blur(40px);
   padding: 6px 16px;
   color: #023e78;
   font-family: "Jost", sans-serif;
@@ -365,6 +370,8 @@ body {
   line-height: 1.2; /* 38.4px */
   letter-spacing: 0.64px;
   text-transform: uppercase;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
 }
 @media screen and (min-width: 1025px) {
@@ -382,14 +389,26 @@ body {
   --images-width: 0px;
   --image-gap: 12px;
   overflow: hidden;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   display: flex;
   gap: var(--image-gap);
-  animation: infinity-scroll-left 10s linear both infinite;
+  -webkit-animation: infinity-scroll-left 30s linear both infinite;
+          animation: infinity-scroll-left 30s linear both infinite;
 }
 @media screen and (min-width: 1025px) {
   .images-scroll {
     --image-gap: 20px;
+  }
+}
+
+@-webkit-keyframes infinity-scroll-left {
+  from {
+    translate: 0 0;
+  }
+  to {
+    translate: calc(-1 * (var(--images-width) + var(--image-gap))) 0;
   }
 }
 
@@ -416,7 +435,8 @@ body {
 .images img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .image1 {
@@ -501,6 +521,8 @@ body {
 }
 
 .text-flow {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   padding: 0 24px;
   display: flex;
@@ -529,6 +551,8 @@ body {
 .text-flow__line {
   position: relative;
   display: inline-block; /* width: fit-content的に振る舞わせる */
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content; /* これがないと右端までカバーが伸びてしまうことがある */
   /* ▼▼▼ 行間調整 ▼▼▼ */
   margin-bottom: 0; /* 必要に応じて調整 */
@@ -544,12 +568,25 @@ body {
   }
 }
 
-@keyframes text-flow {
+@-webkit-keyframes text-flow {
   from {
-    clip-path: inset(0 100% 0 0);
+    -webkit-clip-path: inset(0 100% 0 0);
+            clip-path: inset(0 100% 0 0);
   }
   to {
-    clip-path: inset(0 0 0 0);
+    -webkit-clip-path: inset(0 0 0 0);
+            clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes text-flow {
+  from {
+    -webkit-clip-path: inset(0 100% 0 0);
+            clip-path: inset(0 100% 0 0);
+  }
+  to {
+    -webkit-clip-path: inset(0 0 0 0);
+            clip-path: inset(0 0 0 0);
   }
 }
 .text-flow__cover {
@@ -564,7 +601,8 @@ body {
   /* ▼▼▼ アニメーション設定 ▼▼▼ */
   /* 1行あたりの所要時間を 1.5s に固定する例 */
   /* cubic-bezierだと「シュッ、シュッ」という動き、linearだと「スーッ」と一定の動き */
-  animation: text-flow 1.5s cubic-bezier(0.19, 1, 0.22, 1) var(--delay) both;
+  -webkit-animation: text-flow 1.5s cubic-bezier(0.19, 1, 0.22, 1) var(--delay) both;
+          animation: text-flow 1.5s cubic-bezier(0.19, 1, 0.22, 1) var(--delay) both;
   /* もし文章の長さに応じてスピードを変えたい場合は、
      HTML側で style="--delay: 1s; animation-duration: 2s;" のように個別に上書きする */
 }
@@ -983,12 +1021,22 @@ body:has(dialog[open]) {
 }
 
 /* モーダルのスタイル ============ */
+dialog::-webkit-backdrop {
+  opacity: 0;
+  -webkit-transition: background 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out;
+}
 dialog::backdrop {
   opacity: 0;
   transition: background 0.3s ease-in-out;
 }
 dialog.js-show.modal__content {
   opacity: 1;
+}
+dialog.js-show::-webkit-backdrop {
+  opacity: 1;
+  /* 背景画像 */
+  background: linear-gradient(0deg, rgba(2, 62, 120, 0.5) 0%, rgba(2, 62, 120, 0.5) 100%), rgba(211, 211, 211, 0.5);
 }
 dialog.js-show::backdrop {
   opacity: 1;
@@ -1016,6 +1064,8 @@ dialog.js-show::backdrop {
 }
 
 .modal__body {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
   /* modal内のスタイル */
 }
@@ -1094,7 +1144,8 @@ dialog.js-show::backdrop {
     grid-template-columns: 1fr 1fr;
     align-items: start;
     row-gap: 96px;
-    column-gap: 72px;
+    -moz-column-gap: 72px;
+         column-gap: 72px;
   }
   .challenge__items > *:first-child {
     /* ここに左カラム専用のスタイルを書く */
@@ -1131,6 +1182,8 @@ dialog.js-show::backdrop {
 .challenge__item__stage {
   padding: 12px 28px;
   color: #fff;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   border-radius: 0 0 4px 0;
 }
@@ -1258,7 +1311,7 @@ dialog.js-show::backdrop {
 }
 @media screen and (min-width: 1025px) {
   .swiper-button-prev,
-  .swiper-button-next {
+.swiper-button-next {
     width: 5.5555555556vw;
     height: 5.5555555556vw;
   }
@@ -1371,6 +1424,8 @@ dialog.js-show::backdrop {
   bottom: 20px;
 }
 .member__card__swiper-slide__description p {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   padding: 4px 16px;
   background-color: #fff;
@@ -1458,7 +1513,7 @@ dialog.js-show::backdrop {
 }
 @media screen and (min-width: 1025px) {
   .swiper-button-prev,
-  .swiper-button-next {
+.swiper-button-next {
     bottom: -11.8055555556vw;
   }
 }
@@ -1507,7 +1562,8 @@ dialog.js-show::backdrop {
   flex-direction: column;
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
 }
 @media screen and (min-width: 1025px) {
   .culture__items {
@@ -1873,9 +1929,11 @@ dialog.js-show::backdrop {
 .door-right img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   display: block;
-  object-position: top;
+  -o-object-position: top;
+     object-position: top;
 }
 
 .door-left {
@@ -1967,12 +2025,12 @@ dialog.js-show::backdrop {
 }
 
 /* ホバー時のアニメーション */
-.cta__content:hover .door-left {
+.cta__content.active .door-left {
   width: 60%;
   transform: rotateY(61deg) scaleX(0.8);
 }
 
-.cta__content:hover .door-right {
+.cta__content.active .door-right {
   width: 60%;
   transform: rotateY(-61deg) scaleX(0.8);
 }
